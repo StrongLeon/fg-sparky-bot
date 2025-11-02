@@ -1,12 +1,12 @@
 import type { Client, CommandInteraction } from "discord.js";
 import type { Command } from "./types.ts";
 
-const Ping: Command = {
+const Hello: Command = {
   async run(client: Client, interaction: CommandInteraction): Promise<void> {
     await interaction.followUp("Hi chat");
   },
-  description: "Pings the bot",
-  name: "ping",
+  description: "Say hi to the bot",
+  name: "hello",
 };
 
-export default Ping;
+export default Hello;
