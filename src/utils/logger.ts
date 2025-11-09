@@ -17,26 +17,32 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 import chalk from "chalk";
+import config from "../../.config.json";
 
 export namespace Logger {
   const formatter = new Intl.DateTimeFormat("en-US", { dateStyle: "short", timeStyle: "medium" });
   export function debug(str: string): void {
+    if (config.LOGLEVEL > 0) return;
     console.debug(`[${formatter.format(Date.now())}] ${chalk.blue("[DEBUG]")}: %s`, str);
   }
 
   export function info(str: string): void {
+    if (config.LOGLEVEL > 1) return;
     console.log(`[${formatter.format(Date.now())}] ${chalk.grey("[INFO]")}: %s`, str);
   }
 
   export function notice(str: string): void {
+    if (config.LOGLEVEL > 2) return;
     console.log(`[${formatter.format(Date.now())}] ${chalk.whiteBright("[NOTICE]")}: %s`, str);
   }
 
   export function warn(str: string): void {
+    if (config.LOGLEVEL > 3) return;
     console.warn(`[${formatter.format(Date.now())}] ${chalk.yellowBright("[WARN]")}: %s`, str);
   }
 
   export function error(str: string): void {
+    if (config.LOGLEVEL > 4) return;
     console.error(`[${formatter.format(Date.now())}] ${chalk.redBright("[ERROR]")}: %s`, str);
   }
 
