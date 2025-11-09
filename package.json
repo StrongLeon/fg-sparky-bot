@@ -18,6 +18,7 @@
     "bufferutil": "^4.0.9",
     "discord.js": "^14.24.2",
     "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
     "typeorm": "^0.3.27"
   },
   "devDependencies": {
