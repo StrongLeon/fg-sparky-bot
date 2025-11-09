@@ -20,7 +20,7 @@ export async function enforceCooldown(command: Command | ChatInputCommand, inter
   if (timestamps.has(interaction.user.id)) {
     const expirationTime = timestamps.get(interaction.user.id)! + cooldownAmount;
     if (now < expirationTime) {
-      Logger.warn(`User tried to run command ${command.name} but they're on cooldown for another ${(expirationTime - now).toFixed(3)} seconds`);
+      Logger.warn(`User tried to run command ${command.name} but they're on cooldown for another ${((expirationTime - now) / 1000).toFixed(3)} seconds`);
       const expiredTimestamp = Math.round(expirationTime / 1_000);
       await interaction.reply({
         content: `Chill man you can't run /${command.name}, you can try again <t:${expiredTimestamp}:R>.`,
