@@ -55,12 +55,12 @@ const Guess: ChatInputCommand = {
         Logger.debug("user guessed correctly, replying and clearing timeout");
         clearTimeout(timeout);
         client.off("messageCreate", handler);
-        await message.reply({ content: "guessed correctly" });
+        await message.reply({ content: "hey you guessed correctly, nice job!" });
       }
     };
     const timeout = setTimeout(async () => {
       Logger.info("user failed to guess in time");
-      await interaction.followUp({ content: "timed out", allowedMentions: { repliedUser: false } });
+      await interaction.followUp({ content: `no one guessed in time, the correct answer was ${number.number}.`, allowedMentions: { repliedUser: false } });
       client.off("messageCreate", handler);
     }, number.difficulty === "legendary" ? 60000 : 40000);
     client.on("messageCreate", handler);
