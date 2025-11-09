@@ -17,17 +17,28 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 import { Client, type Interaction } from "discord.js";
-import { handleSlashCommand, registerCommands } from "./commands/listener.ts";
-import { Commands } from "./commands/commands.ts";
-import { Logger } from "./utils/logger.ts";
 import config from "../.config.json";
+import { Commands } from "./commands/commands.ts";
+import { handleSlashCommand, registerCommands } from "./commands/listener.ts";
+import { AppDataSource } from "./db.ts";
+import { formatter } from "./utils/formatter.ts";
+import { Logger } from "./utils/logger.ts";
+
+Logger.notice("Initializing database");
+try {
+  await AppDataSource.initialize();
+} catch (error) {
+  if (!Error.isError(error)) throw error;
+  Logger.error(`Failed to initialize database: ${error.message}`);
+  Logger.error(error.stack ?? "No stack trace available");
+  process.exit(1);
+}
 
 const client = new Client({
   intents: ["Guilds", "GuildMessages", "DirectMessages"],
 });
 
 client.once("clientReady", (client: Client<true>) => {
-  const formatter = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeStyle: "short" });
   const formattedDate = formatter.format(Date.now());
   Logger.notice(`Bot running as ${client.user.username} (started at ${formattedDate})`);
 });
