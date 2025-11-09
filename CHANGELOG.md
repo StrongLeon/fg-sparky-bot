@@ -1,5 +1,8 @@
 # changelog
 
+## 0.3.0 - November 9th, 2025
+- feat(entries): Add a bunch of mediums ([8fc7dcf](https://github.com/skylafalls/fg-sparky-bot/commit/8fc7dcf69be4950b293225376fe5b69d16fd7717))
+
 ## 0.2.1 - November 9th, 2025
 - fix: warn on unsupported difficulties
 
