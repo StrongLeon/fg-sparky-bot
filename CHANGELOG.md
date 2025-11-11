@@ -1,5 +1,13 @@
 # changelog
 
+## 0.5.3 - November 11th, 2025
+
+### features:
+- feat(entries): add the last batch of mediums \[[`27587ac4`](https://github.com/skylafalls/fg-sparky-bot/commit/27587ac40c51ece3438da4ec7b54240d1b9d4c8f)\]
+
+### refactors:
+- refactor: update deps and improve scripts \[[`d656a7bb`](https://github.com/skylafalls/fg-sparky-bot/commit/d656a7bba2facfa383676d9b9f2046bd3691f215)\]
+
 ## 0.5.2 - November 11th, 2025
 - feat(entries): add new medium \[[`4201a57d`](https://github.com/skylafalls/fg-sparky-bot/commit/4201a57d0cd29124036b12834584a1c246f3a347)\]
 
