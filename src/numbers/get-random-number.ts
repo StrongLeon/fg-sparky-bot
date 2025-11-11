@@ -21,7 +21,7 @@ import numbers from "./numbers.json" with { type: "json" };
 export type Difficulties = "easy" | "medium" | "hard" | "random";
 
 export interface NumberInfo {
-  number: string;
+  number: string | null;
   hashedNumber: string;
   symbol: string;
   difficulty: "easy" | "medium" | "hard" | "legendary";
@@ -41,5 +41,5 @@ export function findRandomNumber(difficulty: Difficulties): NumberInfo {
   const number = numberPool[randomIndex];
   // Uh yeah same here
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  return { number: number!.name, hashedNumber: number!.hashedName, symbol: number!.image, difficulty: actualDifficulty };
+  return { number: number?.name ?? null, hashedNumber: number!.hashedName, symbol: number!.image, difficulty: actualDifficulty };
 }
