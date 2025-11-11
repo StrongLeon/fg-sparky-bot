@@ -3,24 +3,24 @@
 ## 0.5.0 - November 9th, 2025
 
 ### features
-- feat(entries): add even more mediums (a7ff2c3f69)
-- feat(guess): try adding support for numbers without their names available (47db55df4e)
-- feat(entries): add more mediums and update generation script (b62f0ce43b)
+- feat(entries): add even more mediums [a7ff2c3f69d9edf5dfb875d1ad1a1eb04b5e82dc]
+- feat(guess): try adding support for numbers without their names available [47db55df4e2b3815256244529e2ba869028811b7]
+- feat(entries): add more mediums and update generation script [b62f0ce43b1a088ec600df015428d296f003d267]
 
 ### refactors
-- refactor: improve scripts (c01d1863f3)
+- refactor: improve scripts [c01d1863f384925268e640bf9e0f11df906b03ed]
 
 ### bug fixes
-- fix(cooldowns): divide the warning log by 1000 (09267bd726)
-- fix(misc): add type attributes to json imports (2a983587f2)
-- fix(entries): fix a number name (55485422d0)
-- fix(cmds): check that CommandInteraction is a ChatInputCommandInteraction (40c9a4b96b)
-- fix(entries): remove hashed .DS_Store "number" (257214ce23)
+- fix(cooldowns): divide the warning log by 1000 [09267bd726d46a2dabd8ffc94e7cb6e8f7f9ddd6]
+- fix(misc): add type attributes to json imports [2a983587f265c4036e86adf57d150542e28d7a54]
+- fix(entries): fix a number name [55485422d0b0cdfe843b25a0e7d9594fd961cc5b]
+- fix(cmds): check that CommandInteraction is a ChatInputCommandInteraction [40c9a4b96bca39c6acb4c58c02f6c41828f594c2]
+- fix(entries): remove hashed .DS_Store "number" [257214ce236df0fb4fcbdf9740106fa8552d6f29]
 
 ### chores
-- chore: bump version (1371779881)
-- chore: add license in (32d5ebf3f9)
-- chore(deps): update oxlint and remove temporal polyfill (f5ed87ba13)
+- chore: bump version [13717798814858512279e5d2b98873ac94356fff]
+- chore: add license in [32d5ebf3f9329c722b3c8b5e00403ead9aa2feb0]
+- chore(deps): update oxlint and remove temporal polyfill [f5ed87ba1345638426bc231b3f4c9744f9dad470]
 
 ## 0.4.0 - November 9th, 2025
 - fix(entries): phreezium and unending pint was wrong ([d3d5709](https://github.com/skylafalls/fg-sparky-bot/commit/d3d5709c22c89e7783589ca6911d8d77184b9a78))
