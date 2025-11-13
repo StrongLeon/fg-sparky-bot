@@ -25,7 +25,13 @@ const hasher = new Bun.CryptoHasher("sha512");
 
 function handlePlayerGuess(message: OmitPartialGroupDMChannel<Message>, number: NumberInfo): boolean | undefined {
   if (message.author.bot) return;
-  const guess = message.content.toLowerCase();
+  // Normalize the player's guess to a standard form to avoid weird os issues
+  // like macos replacing "..." with "…" (elipis) or replacing ' with ’
+  const guess = message.content.toLowerCase()
+    .replaceAll(/’|‘/gu, "'") // Variants of single quotation marks
+    .replaceAll(/“|”/gu, "'") // Variants of double quotation marks
+    .replaceAll("…", "...") // Ellipsis
+    .replaceAll("\\", ""); // Trim backslash escapes
   const hashedGuess = hasher.update(guess, "utf-8").digest("hex");
   Logger.debug(`User guessed: ${guess} (hashed: ${hashedGuess})`);
   Logger.debug(`Number: ${number.number ?? "<hidden>"} (hashed: ${number.hashedNumber})`);
