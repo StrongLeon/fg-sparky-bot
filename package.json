@@ -9,6 +9,7 @@
     "dev": "bun run --watch src/index.ts",
     "start": "bun run dist/index.js",
     "build": "bun build src/index.ts --target=bun --production --outdir=dist --sourcemap=linked",
+    "build:binary": "bun build src/index.ts --target=bun --production --outfile=dist/fg-sparky-bot --compile",
     "lint": "oxlint . --ignore-path=.gitignore && eslint .",
     "lint:fix": "oxlint --fix --fix-suggestions . --ignore-path=.gitignore && eslint --fix .",
     "typecheck": "tsc -p tsconfig.json"
