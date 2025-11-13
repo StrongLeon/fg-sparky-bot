@@ -28,7 +28,7 @@ function handlePlayerGuess(message: OmitPartialGroupDMChannel<Message>, number: 
   const guess = message.content.toLowerCase();
   const hashedGuess = hasher.update(guess, "utf-8").digest("hex");
   Logger.debug(`User guessed: ${guess} (hashed: ${hashedGuess})`);
-  Logger.debug(number.number ? `Number: ${number.number} (hashed: ${number.hashedNumber})` : `Number: <hidden> (hashed: ${number.hashedNumber})`);
+  Logger.debug(`Number: ${number.number ?? "<hidden>"} (hashed: ${number.hashedNumber})`);
   if (hashedGuess === number.hashedNumber) {
     Logger.info("user guessed correctly");
     return true;
@@ -46,14 +46,15 @@ const Guess: Command = {
     }
 
     const difficulty = interaction.options.get("difficulty", true).value as Difficulties;
-    if (difficulty !== "easy" && difficulty !== "medium") {
-      Logger.warn(`User specified the ${difficulty} difficulty but that is currently not implemented!`);
-      await interaction.reply(`sorry uh the ${difficulty} difficulty is not implemented yet`);
-      return;
-    }
     const number = findRandomNumber(difficulty);
     Logger.info(`Player requested for number of difficulty ${difficulty}`);
-    await interaction.reply({ content: `Guess the number, you have ${(number.difficulty === "legendary" ? 60 : 40).toString()} seconds.`, files: [number.symbol] });
+    // The message that will be sent to the player, specifiying the difficulty,
+    // and the amount of time they get to guess it.
+    // THere's some special flair for legendary difficulties.
+    const content = number.difficulty === "legendary"
+      ? `**DIFFICULTY: LEGENDARY**\nGuess the number, you have **60** seconds.`
+      : `Difficulty: ${number.difficulty}\nGuess the number, you have **40** seconds.`;
+    await interaction.reply({ content, files: [number.symbol] });
     Logger.debug("setting up timeout");
     const handler = async (message: OmitPartialGroupDMChannel<Message>) => {
       if (message.channelId !== interaction.channelId) return;
