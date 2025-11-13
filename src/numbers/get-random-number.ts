@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
+import { Logger } from "../utils/logger";
 import numbers from "./numbers.json" with { type: "json" };
 
 export type Difficulties = "easy" | "medium" | "hard" | "random";
@@ -30,8 +31,11 @@ export interface NumberInfo {
 function getRandomDifficulty(): "easy" | "medium" | "hard" | "legendary" {
   if (Math.random() * 48 < 1) return "legendary";
   // uhh i kinda need the non-null assertion here cause it's not gonna be undefined
+  const number = Math.floor(Math.random() * 3);
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  return (["easy", "medium", "hard"] as const)[Math.floor(Math.random() * 3)]!;
+  Logger.debug(`Random number generated: ${number.toString()} (corresponds to ${(["easy", "medium", "hard"] as const)[number]!})`);
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return (["easy", "medium", "hard"] as const)[number]!;
 }
 
 export function findRandomNumber(difficulty: Difficulties): NumberInfo {
