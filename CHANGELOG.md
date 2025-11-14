@@ -1,5 +1,10 @@
 # changelog
 
+## 0.6.2 - November 13th, 2025
+### bug fixes:
+- fix(guess): Replace unicode characters with their ASCII variants before processing guess \[[`ac43893f`](https://github.com/skylafalls/fg-sparky-bot/commit/ac43893fc66d3f316075be7604f49cd46ad72445)] by @skylafalls
+- fix(entries): fix an easy number \[[`84c1b876`](https://github.com/skylafalls/fg-sparky-bot/commit/84c1b87616091723debce68f140c3a509ca645ba)] by @skylafalls
+
 ## 0.6.1 - November 13th, 2025
 ### refactors:
 - refactor: add binary build script \[[`ddf536ef`](https://github.com/skylafalls/fg-sparky-bot/commit/ddf536ef7df740fc3b841df3182d65cb99a9dde5)]
