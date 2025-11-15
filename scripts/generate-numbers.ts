@@ -32,7 +32,7 @@ await Promise.all(files.map(async (fileName) => {
 // replacing _ with . is close enough, the only special case i can think of
   // is Positive_Negative Point which the _ should be replaced with /
   const fileExtension = fileName.slice(fileName.lastIndexOf("."));
-  if (fileExtension.endsWith("DS_Store")) return;
+  if (fileExtension.endsWith("DS_Store") || fileExtension.endsWith("txt")) return;
   const number = (() => {
     const number = fileName.slice(0, fileName.lastIndexOf("."));
     switch (number) {
