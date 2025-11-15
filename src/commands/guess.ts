@@ -31,8 +31,7 @@ function handlePlayerGuess(message: OmitPartialGroupDMChannel<Message>, number: 
   const guess = message.content.toLowerCase()
     .replaceAll(/’|‘/gu, "'") // Variants of single quotation marks
     .replaceAll(/“|”/gu, "'") // Variants of double quotation marks
-    .replaceAll("…", "...") // Ellipsis
-    .replaceAll("\\", ""); // Trim backslash escapes
+    .replaceAll("…", "..."); // Ellipsis
   const hashedGuess = hasher.update(guess, "utf-8").digest("hex");
   Logger.debug(`User guessed: ${guess} (hashed: ${hashedGuess})`);
   Logger.debug(`Number: ${number.number ?? "<hidden>"} (hashed: ${number.hashedNumber})`);
