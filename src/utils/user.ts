@@ -16,12 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-import { AppDataSource } from "../db";
 import { UserProfile } from "../entities/user-profile";
 
-export async function getUser(userId: bigint): Promise<UserProfile | null> {
-  const user = await AppDataSource.getRepository(UserProfile).findOne({
-    where: { user_id: userId },
+export async function getUser(id: string): Promise<UserProfile | null> {
+  return await UserProfile.findOneBy({
+    id: BigInt(id),
   });
-  return user;
+}
+
+export async function createUser(id: string): Promise<UserProfile> {
+  const user = new UserProfile();
+  user.id = BigInt(id);
+  return await user.save();
 }
