@@ -31,17 +31,18 @@ export function handleResponse(client: Client, interaction: ChatInputCommandInte
       Logger.debug("user guessed correctly, replying and clearing timeout");
       clearTimeout(timeout);
       client.off("messageCreate", handler);
-      await message.reply({ content: "hey you guessed correctly, nice job!" });
       guessCooldowns.set(interaction.channelId, false);
+      await message.reply({ content: "hey you guessed correctly, nice job!" });
     }
   };
 
   const timeout = setTimeout(async () => {
-    const content = `no one guessed in time${number.number ? `, the correct answer was ${number.number}.` : "."}`;
     Logger.info("user failed to guess in time");
-    await interaction.followUp({ content, allowedMentions: { repliedUser: false } });
     client.off("messageCreate", handler);
     guessCooldowns.set(interaction.channelId, false);
+
+    const content = `no one guessed in time${number.number ? `, the correct answer was ${number.number}.` : "."}`;
+    await interaction.followUp({ content, allowedMentions: { repliedUser: false } });
   }, number.difficulty === "legendary" ? 60000 : 40000);
 
   client.on("messageCreate", handler);
