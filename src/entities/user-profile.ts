@@ -16,18 +16,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
 
 /**
  * This is a person's user profile.
  */
 @Entity()
-export class UserProfile {
+export class UserProfile extends BaseEntity {
   /**
    * The discord user id for the profile.
    */
-  @PrimaryGeneratedColumn("identity")
-  user_id = 0n;
+  @PrimaryColumn("text")
+  id = "";
 
   /**
    * The current terminus token count for the user.
