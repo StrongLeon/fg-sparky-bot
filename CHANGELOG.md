@@ -1,8 +1,24 @@
 # changelog
 
+## 0.9.0 - November 25th, 2025
+### features:
+- \[[`18b3eef1`](https://github.com/skylafalls/fg-sparky-bot/commit/18b3eef1ce2315cf2c9947c79566b0460a9e78ff)] - feat: add user profiles ([#11](https://github.com/skylafalls/fg-sparky-bot/pull/11))
+
+### refactors:
+- \[[`311cb502`](https://github.com/skylafalls/fg-sparky-bot/commit/311cb5025fd7176efcf556175c7c6496534d6646)] - refactor(cmds): move /guess response logic to different file
+- \[[`a5137ead`](https://github.com/skylafalls/fg-sparky-bot/commit/a5137eaddaae0fc1244a2c23c56e75f8834fdb65)] - refactor(entries): migrate to UUIDs to point to numbers
+- \[[`69fc1db1`](https://github.com/skylafalls/fg-sparky-bot/commit/69fc1db1339c1311c5849320580bbcd80d2c3c45)] - refactor(cmds): slightly improve logging
+
+### fixes:
+- \[[`1591cf20`](https://github.com/skylafalls/fg-sparky-bot/commit/1591cf2017ea1927690ccb8a113f4aa1b43903a2)] - fix(entries): fix paths for batches of numbers
+- \[[`8d74ee98`](https://github.com/skylafalls/fg-sparky-bot/commit/8d74ee98e1169f4945184e5e1bfda0a9aae6cc39)] - fix(guess): fix race conditions
+
+## chores:
+- \[[`faf9b6ee`](https://github.com/skylafalls/fg-sparky-bot/commit/faf9b6ee53d8a151bc63d2ac6083ca120305defa)] - chore(deps): update linters
+
 ## 0.8.1 - November 23rd, 2025
 ### chores:
-- chore(deps): update deps lol \[[`6c1595fa`](https://github.com/skylafalls/fg-sparky-bot/commit/6c1595fa67b3e3de864a6d058926fc40ad68afc4)] 
+- chore(deps): update deps lol \[[`6c1595fa`](https://github.com/skylafalls/fg-sparky-bot/commit/6c1595fa67b3e3de864a6d058926fc40ad68afc4)]
 
 ## 0.8.0 - November 23rd, 2025
 ### BREAKING CHANGES:
