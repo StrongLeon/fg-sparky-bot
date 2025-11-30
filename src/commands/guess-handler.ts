@@ -5,10 +5,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 import type { ChatInputCommandInteraction, Client, Message, OmitPartialGroupDMChannel } from "discord.js";
-import type { NumberInfo } from "../numbers/get-random-number";
 import { Logger } from "../utils/logger";
 import { createUser, getUser } from "../utils/user";
 import { guessCooldowns } from "./cooldowns";
+import type { NumberInfo } from "./get-random-number";
 
 const hasher = new Bun.CryptoHasher("sha512");
 

@@ -5,8 +5,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 import { ApplicationCommandOptionType, type Client, type CommandInteraction } from "discord.js";
-import { findRandomNumber, type Difficulties } from "../numbers/get-random-number.ts";
 import { Logger } from "../utils/logger.ts";
+import { findRandomNumber, type Difficulties } from "./get-random-number.ts";
 import { handleResponse } from "./guess-handler.ts";
 import type { Command } from "./types.ts";
 
