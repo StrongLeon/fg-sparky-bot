@@ -34,7 +34,7 @@ const User: Command = {
         const discordUser = await client.users.fetch(userId);
         if (userInfo) {
           await interaction.reply({
-            content: `## Profile information for ${discordUser.displayName} (${discordUser.username})\ntokens: ${userInfo.tokens.toString()}`,
+            content: `## Profile information for ${discordUser.displayName} (${discordUser.username})\nterminus tokens: ${userInfo.tokens.toString()} <:terminusfinity:1444859277515690075>`,
           });
         } else {
           await interaction.reply("sorry, fg sparky bot doesn't have data for this user");
@@ -58,7 +58,7 @@ const User: Command = {
             return "";
           })(index);
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          return `${header} ${position}: ${discordUsers[index]!.displayName} (${user.tokens.toString()} tokens)`;
+          return `${header} ${position}: ${discordUsers[index]!.displayName} (${user.tokens.toString()} <:terminusfinity:1444859277515690075>)`;
         }).filter(value => value !== "no").join("\n")}
         `;
         await interaction.reply({ content });
