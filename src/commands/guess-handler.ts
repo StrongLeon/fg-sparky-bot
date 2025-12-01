@@ -68,7 +68,7 @@ export function handleResponse(client: Client, interaction: ChatInputCommandInte
       if (user) {
         Logger.info(`user already exists, adding tokens`);
         user.tokens += gain;
-        await message.reply(`hey you guessed correctly, nice job! you also earned ${gain.toString()} <:terminusfinity:1444859277515690075>!`);
+        await message.reply(`hey you guessed correctly, nice job! you also earned ${gain.toString()} tokens and now you have ${user.tokens.toString()} <:terminusfinity:1444859277515690075>!`);
         await user.save();
       } else {
         Logger.info(`user not found, creating user and adding tokens`);
