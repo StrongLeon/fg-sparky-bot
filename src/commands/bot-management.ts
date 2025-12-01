@@ -4,7 +4,7 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import type { Client, CommandInteraction } from "discord.js";
+import { ApplicationCommandOptionType, type Client, type CommandInteraction } from "discord.js";
 import type { Command } from "./types.ts";
 
 export const Poweroff: Command = {
@@ -24,13 +24,21 @@ export const Poweroff: Command = {
 
 export const Restart: Command = {
   async run(client: Client, interaction: CommandInteraction): Promise<void> {
+    if (!interaction.isChatInputCommand()) return;
     if (interaction.user.id !== "1051147056481308744") {
       await interaction.reply("hey don't restart the bot you're not <@1051147056481308744>");
       return;
     }
     await interaction.reply("Restarting...");
+    if (interaction.options.getBoolean("rebuild", false)) await Bun.$`/home/linuxbrew/.linuxbrew/bin/bun run build`;
     process.exit(3);
   },
   description: "Restarts the bot",
   name: "restart",
+  options: [{
+    name: "rebuild",
+    description: "Also rebuild the code?",
+    required: false,
+    type: ApplicationCommandOptionType.Boolean,
+  }],
 };
