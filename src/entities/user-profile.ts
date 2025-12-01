@@ -9,7 +9,7 @@ import { BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
 /**
  * This is a person's user profile.
  */
-@Entity()
+@Entity({ name: "user_profiles" })
 export class UserProfile extends BaseEntity {
   /**
    * The discord user id for the profile.
