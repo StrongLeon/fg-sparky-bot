@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 import { ApplicationCommandOptionType, type Client, type CommandInteraction, type User as DiscordUser } from "discord.js";
+import numbers from "../../numbers/numbers.json" with { type: "json" };
 import { UserProfile } from "../entities/user-profile.ts";
 import { getUser } from "../utils/user.ts";
 import type { Command } from "./types.ts";
@@ -24,6 +25,15 @@ function ordinalOf(number: number): `${number}${"st" | "nd" | "rd" | "th"}` {
   return `${number}th`;
 }
 
+function filterNumbersByUUID<T extends { uuid: string }>(first: T[], second: string[]): T[] {
+  return first.filter((entry) => {
+    for (const uuid of second) {
+      if (entry.uuid === uuid) return true;
+    }
+    return false;
+  });
+}
+
 const User: Command = {
   async run(client: Client, interaction: CommandInteraction): Promise<void> {
     if (!interaction.isChatInputCommand()) return;
@@ -37,6 +47,10 @@ const User: Command = {
             `## Profile information for ${discordUser.displayName} (${discordUser.username}`,
             `terminus tokens: ${userInfo.tokens.toString()} <:terminusfinity:1444859277515690075>`,
             `unique numbers guessed: ${userInfo.guessedEntries.length.toString()}`,
+            `- easy numbers: ${filterNumbersByUUID(numbers.easy, userInfo.guessedEntries).length.toString()}`,
+            `- medium numbers: ${filterNumbersByUUID(numbers.medium, userInfo.guessedEntries).length.toString()}`,
+            `- hard numbers: ${filterNumbersByUUID(numbers.hard, userInfo.guessedEntries).length.toString()}`,
+            `- legendary numbers: ${filterNumbersByUUID(numbers.legendary, userInfo.guessedEntries).length.toString()}`,
           ];
           await interaction.reply({
             content: content.join("\n"),
