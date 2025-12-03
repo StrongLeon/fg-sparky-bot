@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 import { ApplicationCommandOptionType, type Client, type CommandInteraction, type User as DiscordUser } from "discord.js";
+import numbers from "../../numbers/numbers.json" with { type: "json" };
 import { UserProfile } from "../entities/user-profile.ts";
 import { getUser } from "../utils/user.ts";
 import type { Command } from "./types.ts";
@@ -24,6 +25,15 @@ function ordinalOf(number: number): `${number}${"st" | "nd" | "rd" | "th"}` {
   return `${number}th`;
 }
 
+function filterNumbersByUUID<T extends { uuid: string }>(first: T[], second: string[]): T[] {
+  return first.filter((entry) => {
+    for (const uuid of second) {
+      if (entry.uuid === uuid) return true;
+    }
+    return false;
+  });
+}
+
 const User: Command = {
   async run(client: Client, interaction: CommandInteraction): Promise<void> {
     if (!interaction.isChatInputCommand()) return;
@@ -33,8 +43,17 @@ const User: Command = {
         const userInfo = await getUser(userId);
         const discordUser = await client.users.fetch(userId);
         if (userInfo) {
+          const content = [
+            `## Profile information for ${discordUser.displayName} (${discordUser.username}`,
+            `terminus tokens: ${userInfo.tokens.toString()} <:terminusfinity:1444859277515690075>`,
+            `unique numbers guessed: ${userInfo.guessedEntries.length.toString()}`,
+            `- easy numbers: ${filterNumbersByUUID(numbers.easy, userInfo.guessedEntries).length.toString()}`,
+            `- medium numbers: ${filterNumbersByUUID(numbers.medium, userInfo.guessedEntries).length.toString()}`,
+            `- hard numbers: ${filterNumbersByUUID(numbers.hard, userInfo.guessedEntries).length.toString()}`,
+            `- legendary numbers: ${filterNumbersByUUID(numbers.legendary, userInfo.guessedEntries).length.toString()}`,
+          ];
           await interaction.reply({
-            content: `## Profile information for ${discordUser.displayName} (${discordUser.username})\nterminus tokens: ${userInfo.tokens.toString()} <:terminusfinity:1444859277515690075>`,
+            content: content.join("\n"),
           });
         } else {
           await interaction.reply("sorry, fg sparky bot doesn't have data for this user");
