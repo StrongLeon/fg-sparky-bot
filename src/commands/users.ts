@@ -33,8 +33,13 @@ const User: Command = {
         const userInfo = await getUser(userId);
         const discordUser = await client.users.fetch(userId);
         if (userInfo) {
+          const content = [
+            `## Profile information for ${discordUser.displayName} (${discordUser.username}`,
+            `terminus tokens: ${userInfo.tokens.toString()} <:terminusfinity:1444859277515690075>`,
+            `unique numbers guessed: ${userInfo.guessedEntries.length.toString()}`,
+          ];
           await interaction.reply({
-            content: `## Profile information for ${discordUser.displayName} (${discordUser.username})\nterminus tokens: ${userInfo.tokens.toString()} <:terminusfinity:1444859277515690075>`,
+            content: content.join("\n"),
           });
         } else {
           await interaction.reply("sorry, fg sparky bot doesn't have data for this user");
