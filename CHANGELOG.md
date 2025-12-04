@@ -1,5 +1,18 @@
 # changelog
 
+## 0.10.2 - December 3rd, 2025
+### features:
+- \[[`abeeaa46`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/abeeaa4645a74250fbbeb2bb57f59eb3ab7fe0fd)] - feat(users): track unique guesses for statistics ([#3](https://codeberg.org/skylafalls/fg-sparky-bot/issues/3))
+- \[[`feb1f8b2`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/feb1f8b24a46d8eda4b6b2c80a5e8d0202d1a41d)] - feat(users): also show unique entries
+
+### fixes:
+- \[[`82423ebf`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/82423ebfa379ebec8efab2facaaaf6a167bfef84)] - fix(users): fix leaderboard options parsing
+- \[[`79bc13bb`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/79bc13bbb3187d75778bf885d7acf70354c03150)] - fix(users): fix stats incorrectly being shown as unique
+- \[[`93b32a0d`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/93b32a0df2287c1e53b67e0f958eb302c4e135a3)] - fix(guess): no it'll be fine your stats will save
+
+### chores:
+- \[[`772af81e`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/772af81e25a0d52f03f1ed1c7acc564c4b0f02b6)] - chore(deps): update linters and typeorm
+
 ## 0.10.1 - December 1st, 2025
 ### features:
 - \[[`8761d77b`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/8761d77b10122434cf6b944199a94e75598c4b4c)] - feat(profiles): add user leaderboard subcommand
