@@ -46,7 +46,7 @@ const User: Command = {
           const content = [
             `## Profile information for ${discordUser.displayName} (${discordUser.username}`,
             `terminus tokens: ${userInfo.tokens.toString()} <:terminusfinity:1444859277515690075>`,
-            `unique numbers guessed: ${userInfo.guessedEntries.length.toString()}`,
+            `total numbers guessed: ${userInfo.guessedEntries.length.toString()}`,
             `- easy numbers: ${filterNumbersByUUID(numbers.easy, userInfo.guessedEntries).length.toString()}`,
             `- medium numbers: ${filterNumbersByUUID(numbers.medium, userInfo.guessedEntries).length.toString()}`,
             `- hard numbers: ${filterNumbersByUUID(numbers.hard, userInfo.guessedEntries).length.toString()}`,
