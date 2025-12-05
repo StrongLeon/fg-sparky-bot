@@ -3,6 +3,7 @@ import { UserProfile } from "../../entities/user-profile";
 import { ordinalOf } from "../../utils/numbers";
 
 export default async function userLeaderboardDisplay(client: Client, interaction: ChatInputCommandInteraction): Promise<void> {
+  await interaction.deferReply();
   const users = await UserProfile.find({ order: { tokens: "DESC" }, select: ["id", "tokens"] });
   const discordUsers: DiscordUser[] = await Promise.all(
     users.map(profile => client.users.fetch(profile.id)),
@@ -22,5 +23,5 @@ export default async function userLeaderboardDisplay(client: Client, interaction
       return `${header} ${position}: ${discordUsers[index]!.displayName} (${user.tokens.toString()} <:terminusfinity:1444859277515690075>)`;
     }).filter(value => value !== "no").join("\n")}
     `;
-  await interaction.reply({ content });
+  await interaction.editReply({ content });
 }
