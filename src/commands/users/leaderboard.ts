@@ -6,10 +6,18 @@ import { ordinalOf } from "../../utils/numbers";
 export default async function userLeaderboardDisplay(client: Client, interaction: ChatInputCommandInteraction): Promise<void> {
   await interaction.deferReply();
 
+  const displayAmount = (interaction.options.getNumber("amount", false) ?? 10);
+
   Logger.info("/user-leaderboard: fetching user data...");
 
+  // Only take displayAmount from db to avoid fetching too many people and
+  // getting rate-limited by discord
   console.time("/user-leaderboard: fetch user data from db");
-  const users = await UserProfile.find({ order: { tokens: "DESC" }, select: ["id", "tokens"] });
+  const users = await UserProfile.find({
+    order: { tokens: "DESC" },
+    select: ["id", "tokens"],
+    take: displayAmount,
+  });
   console.timeEnd("/user-leaderboard: fetch user data from db");
 
   console.time("/user-leaderboard: fetch user data from discord");
@@ -17,8 +25,6 @@ export default async function userLeaderboardDisplay(client: Client, interaction
     users.map(profile => client.users.fetch(profile.id)),
   );
   console.timeEnd("/user-leaderboard: fetch user data from discord");
-
-  const displayAmount = (interaction.options.getNumber("amount", false) ?? 10);
 
   Logger.debug("/user-leaderboard: generating user reply...");
   const content = `\
