@@ -8,6 +8,7 @@ import { ApplicationCommandOptionType, type Client, type CommandInteraction } fr
 import type { Command } from "./types.ts";
 import userLeaderboardDisplay from "./users/leaderboard.ts";
 import userShow from "./users/show.ts";
+import serverStatisticsDisplay from "./users/statistics.ts";
 
 const User: Command = {
   async run(client: Client, interaction: CommandInteraction): Promise<void> {
@@ -19,6 +20,10 @@ const User: Command = {
       }
       case "leaderboard": {
         await userLeaderboardDisplay(client, interaction);
+        return;
+      }
+      case "statistics": {
+        await serverStatisticsDisplay(client, interaction);
         return;
       }
       default: {
@@ -48,6 +53,10 @@ const User: Command = {
       description: "The top amount of people to show (defaults to 10)",
       type: ApplicationCommandOptionType.Number,
     }],
+  }, {
+    name: "statistics",
+    description: "Show the server's statistics",
+    type: ApplicationCommandOptionType.Subcommand,
   }],
 };
 
