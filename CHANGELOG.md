@@ -1,5 +1,27 @@
 # changelog
 
+## 0.11.0 - December 3rd, 2025
+### BREAKING CHANGES:
+- \[[`ca3b0b20`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/ca3b0b201638fedc36c0572ae3488ca22754acc4)] - refactor(users)!: scope profiles information to their servers
+  
+### features:
+- \[[`27fb6cc6`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/27fb6cc6ef177b160c5c3a5aefe3f25b1103337c)] - feat(users): add server statistics subcommand
+
+### refactors:
+- \[[`e53da13e`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/e53da13e2796e123f4568de532d35b8b2409b589)] - refcator(cmds): move specific and utility functions to separate files
+- \[[`794aca74`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/794aca748bcc8017e5d7f0e3a13ee482ae533cc2)] - refactor(utils): add assertions and move formatters
+
+### performance improvements:
+- \[[`cfbacbc3`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/cfbacbc330e5f0695b64d08541905393d5b3bf9e)] - perf(user/lb): only take the selected amount from db
+  
+### fixes:
+- \[[`bc978942`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/bc9789425a4cd9ff888ab53251fd3e81d98516d3)] - fix(stats): use different filtering for total/unique stats
+- \[[`4fdc4ee8`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/4fdc4ee84746ca6305f6917d9527552da3780861)] - fix(users/lb): defer the reply to avoid interaction errors
+- \[[`185ca499`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/185ca499db8f293be60f892e34ea54485f68f28a)] - fix(users/lb): reply with multiple message for large amounts
+
+### chores:
+- \[[`4fe3615b`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/4fe3615ba322a54195ab203842eeaa2bc6dc0e50)] - chore(cli): no indrection in init pls
+
 ## 0.10.2 - December 3rd, 2025
 ### features:
 - \[[`abeeaa46`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/abeeaa4645a74250fbbeb2bb57f59eb3ab7fe0fd)] - feat(users): track unique guesses for statistics ([#3](https://codeberg.org/skylafalls/fg-sparky-bot/issues/3))
