@@ -33,7 +33,7 @@ await Promise.all(files.map(async (fileName) => {
   const fileExtension = fileName.slice(fileName.lastIndexOf("."));
   if (fileExtension.endsWith("DS_Store") || fileExtension.endsWith("txt")) return;
   const number = (() => {
-    const number = fileName.slice(0, fileName.lastIndexOf(".")).replaceAll("_", ".");
+    const number = fileName.slice(0, fileName.lastIndexOf("."));
     switch (number) {
       default: {
         return number;
