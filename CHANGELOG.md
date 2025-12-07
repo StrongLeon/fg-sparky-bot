@@ -1,5 +1,24 @@
 # changelog
 
+## 0.11.2 - December 7th, 2025
+### features:
+- \[[`4fab8fef`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/4fab8fef5612b08492b0fe0e42a126c54d248503)] - feat(guess): a jet2 holiday
+- \[[`1557ac2d`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/1557ac2deda7424cb8238d180749d20ba662adf9)] - feat(users/statistics): show a percentage of how many entries guessed
+
+### fixes:
+- \[[`499a7db5`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/499a7db59558df8ac08bbf68e0e119c7629b141d)] - fix(guess): don't respond to bot messages
+- \[[`484b6b0a`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/484b6b0aa2aa36ae5d2f5fdca4b526f89ef60f29)] - fix(guess): remove assertion to prevent bot from shitting itself
+- \[[`2d90df43`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/2d90df43a03e0e3f99662d3d016c7b2f7c5846ee)] - fix(scripts): update path to numbers.json
+- \[[`16b531bd`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/16b531bd9e9f6a13f53cca83981616b4d6f131bd)] - fix(guess): remove /guess assertions
+- \[[`cb78e4ad`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/cb78e4adb849d5cd79f91833a3158b22bf48e9ab)] - fix(handlers): only invoke commands in actual servers
+- \[[`979063d0`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/979063d0728d9549b50a46754cb794c5e639cd75)] - fix(cmds): ensure commands are run in a server
+- \[[`0b6b4616`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/0b6b4616d12233a811ae7ca57a531c07a2897c86)] - fix(restart): exit with code 0 not 3
+- \[[`2b0df315`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/2b0df31548c0c463581cdee338d1d9391ec27c96)] - fix(scripts): dont replace every _ with .
+
+### chores:
+- \[[`f00a2132`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/f00a2132c67ebde244cd6da3be40f3739f8c2052)] - chore(scripts): build with sourcemap cause easier debugging
+- \[[`1b539e0f`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/1b539e0f4f9072d9af0dec8f74714119b185b700)] - chore: bump package manager version
+  
 ## 0.11.1 - December 5th, 2025
 ### fixes:
 - \[[`7e1927eb`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/7e1927eb88b6a90b51df2a7218b6ee5d018974cc)] - fix(users/show): add missing paranthesis
