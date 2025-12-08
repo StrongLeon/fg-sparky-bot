@@ -4,10 +4,11 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+import numbers from "../../numbers/numbers.json" with { type: "json" };
 
-// Please remember to update these constants after generating a new batch.
-export const UNIQUE_EASY_ENTRIES = 413;
-export const UNIQUE_MEDIUM_ENTRIES = 839;
-export const UNIQUE_HARD_ENTRIES = 2379;
-export const UNIQUE_LEGENDARY_ENTRIES = 587;
+/* Static variables */
+export const UNIQUE_EASY_ENTRIES: number = numbers.easy.length;
+export const UNIQUE_MEDIUM_ENTRIES: number = numbers.medium.length;
+export const UNIQUE_HARD_ENTRIES: number = numbers.hard.length;
+export const UNIQUE_LEGENDARY_ENTRIES: number = numbers.legendary.length;
 export const UNIQUE_ENTRIES: number = UNIQUE_EASY_ENTRIES + UNIQUE_MEDIUM_ENTRIES + UNIQUE_HARD_ENTRIES + UNIQUE_LEGENDARY_ENTRIES;
