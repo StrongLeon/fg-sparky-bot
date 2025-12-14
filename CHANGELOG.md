@@ -1,5 +1,17 @@
 # changelog
 
+## 0.11.4 - December 14th, 2025
+### features:
+- \[[`6547b9ed`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/6547b9edd6dfdfdf31efe8055755ba38732fcb87)] - feat(users/lb): add lb option for other stats
+
+### fixes:
+- \[[`4896db9e`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/4896db9e6b7d8dcba80209ef51a93148732d671a)] - fix: change logger imports to the correct file
+- \[[`9ed74d32`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/9ed74d326183f93a83c9fb0a3d4549d617afcdc8)] - fix(user/stats): filter unique entries out of the unique array
+
+### chores:
+- \[[`56f09f15`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/56f09f15ba1350a501407b47bd96c0f5cc63f71a)] - chore(entries): bump constant values
+- \[[`528b4a51`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/528b4a5196e7e72432062cfb181c6c3238a605dc)] - chore(constants): more like statics less like constants
+
 ## 0.11.3 - December 7th, 2025
 ### fixes:
 - \[[`e31bcbd3`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/e31bcbd38c5121faae798df710821fdd557205a9)] - fix(deps): use better-sqlite3 and revert back to bun@1.3.3
