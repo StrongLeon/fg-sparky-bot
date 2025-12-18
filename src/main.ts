@@ -11,7 +11,7 @@ import { AppDataSource } from "./db";
 import { Logger } from "./utils/logger";
 
 const program = new Command()
-  .version("0.6.2")
+  .version("0.11.6")
   .description("FG sparky bot as a cli")
   .option("-t, --token <token>", "The discord bot token to login with (env variable: DISCORD_TOKEN)")
   .option("-l, --loglevel [loglevel]", "Logging level as a number (env variable: LOG_LEVEL)");

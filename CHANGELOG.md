@@ -1,5 +1,13 @@
 # changelog
 
+## 0.11.6 - December 18th, 2025
+### fixes:
+- \[[`707866e3`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/707866e36d7d70c692539ee05c6004dd3953e2ed)] - fix(guess/handler): don't skip parsing guess if there's no easter egg
+
+### refactors:
+- \[[`72b3a744`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/72b3a744c017c137c2b3bc8fb16d5511f4a48ecc)] - refactor(build): add comptime plugin
+- \[[`a75d605d`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/a75d605d97a893aaf020f5768b9959f999c4812f)] - refactor: actually use comptime and util functions
+
 ## 0.11.5 - December 17th, 2025
 ### refactors:
 - \[[`50de82ae`](https://codeberg.org/skylafalls/fg-sparky-bot/commit/50de82ae1f99721b29e5822054482cf98dea7f2d)] - refactor(guess): split out special handler to separate function
