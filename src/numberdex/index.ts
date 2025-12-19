@@ -15,6 +15,7 @@ const spawnJob = baker.add({
   name: "numberdex-spawn-job",
   cron: "@every_4_hours",
   persist: true,
+  overrunProtection: true,
   callback() {
     Logger.info(`test`);
   },
