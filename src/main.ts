@@ -8,6 +8,7 @@ import { Command } from "commander";
 import { Client } from "discord.js";
 import { initClient } from ".";
 import { AppDataSource } from "./db";
+import { baker } from "./numberdex";
 import { Logger } from "./utils/logger";
 
 const program = new Command()
@@ -36,6 +37,7 @@ try {
   Logger.loglevel = loglevel;
   Logger.notice("Initializing database");
   await AppDataSource.initialize();
+  await baker.ready();
   await initClient(client, token);
 } catch (error) {
   if (!Error.isError(error)) throw error;
