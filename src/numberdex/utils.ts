@@ -1,12 +1,15 @@
-import { DiscordjsError } from "discord.js";
+/**
+ * @license
+ * fg-sparky-bot - Guess the FG number based on its symbol
+ * Copyright (C) 2025 Skylafalls
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+import { DiscordjsError, type SendableChannels } from "discord.js";
 import { Err, Ok, type Result } from "rust-optionals";
 
-export async function spawnNumberhuman(id: string, channelId: string): Promise<Result<void, Error>> {
-  const channel = await client.channels.fetch(channelId);
-  if (!channel) return Err("no error");
-  if ((!channel.isSendable() && !channel.isTextBased()) || channel.isDMBased()) return Ok();
+export async function spawnNumberhuman(id: string, channel: SendableChannels): Promise<Result<void, Error>> {
   try {
-    await channel.send("pretend this is a numberhuman or smth");
+    await channel.send({ content: "hello", files: [`numbers/humans/${id}.jpg`] });
     return Ok();
   } catch (err) {
     if (err instanceof DiscordjsError) return Err(err);
