@@ -6,7 +6,7 @@
   "license": "GPL-3.0-or-later",
   "version": "0.11.6",
   "scripts": {
-    "dev": "bun run --watch src/main.ts",
+    "dev": "bun run build && bun run --watch dist/main.js",
     "build": "bun run scripts/bundle.ts",
     "lint": "oxlint . --ignore-path=.gitignore && eslint .",
     "lint:fix": "oxlint --fix --fix-suggestions . --ignore-path=.gitignore && eslint --fix .",

@@ -4,6 +4,7 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+import { comptime } from "comptime.ts" with { type: "comptime" };
 import { ApplicationCommandOptionType, type Client, type CommandInteraction } from "discord.js";
 import { Logger } from "../utils/logger.ts";
 import { findRandomNumber, type Difficulties } from "./guess/get-random-number.ts";
@@ -28,7 +29,10 @@ const Guess: Command = {
     const content = number.difficulty === "legendary"
       ? `**DIFFICULTY: LEGENDARY**\nGuess the number, you have **60** seconds.`
       : `Difficulty: ${number.difficulty}\nGuess the number, you have **40** seconds.`;
-    await interaction.reply({ content, files: [number.symbol] });
+    await interaction.reply({ content: content + comptime(
+      process.env.NODE_ENV === "development"
+        ? "\n-# NOTE: you're running on dev, your data probably won't save."
+        : ""), files: [number.symbol] });
 
     Logger.debug("setting up timeout");
     handleResponse(client, interaction, number);
