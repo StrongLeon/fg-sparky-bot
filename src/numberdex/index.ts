@@ -13,10 +13,9 @@ export const baker: Baker = Baker.create({
 
 const spawnJob = baker.add({
   name: "numberdex-spawn-job",
-  cron: "@every_4_hours",
+  cron: "@every_minute",
   persist: true,
   overrunProtection: true,
-  callback() {
-    Logger.info(`test`);
+  async callback() {
   },
 });

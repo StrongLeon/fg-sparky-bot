@@ -33,6 +33,14 @@ const client: Client = new Client({
   intents: ["Guilds", "GuildMessages", "DirectMessages", "MessageContent"],
 });
 
+declare global {
+  namespace globalThis {
+    var client: Client;
+  }
+}
+
+globalThis.client = client;
+
 try {
   Logger.loglevel = loglevel;
   Logger.notice("Initializing database");
