@@ -4,7 +4,7 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { DiscordjsError, type SendableChannels } from "discord.js";
+import { DiscordjsError, Message, type SendableChannels } from "discord.js";
 import { Err, Ok, type Result } from "rust-optionals";
 import numberhumans from "../../numbers/numberhumans.json" with { type: "json" };
 
@@ -37,11 +37,13 @@ export function findRandomNumber(): NumberhumanInfo {
   };
 }
 
-export async function spawnNumberhuman(channel: SendableChannels): Promise<Result<NumberhumanInfo, Error>> {
+export async function spawnNumberhuman(channel: SendableChannels): Promise<Result<[NumberhumanInfo, Message], Error>> {
   const numberhuman = findRandomNumber();
   try {
-    await channel.send({ content: "hello", files: [numberhuman.image] });
-    return Ok(numberhuman);
+    return Ok([
+      numberhuman,
+      await channel.send({ content: "hello", files: [numberhuman.image] },
+      )]);
   } catch (err) {
     if (err instanceof DiscordjsError) return Err(err);
     return Err("unknown error");

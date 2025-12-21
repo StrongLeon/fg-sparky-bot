@@ -34,11 +34,20 @@ export async function setupCronJobs(client: Client, baker: Baker): Promise<void>
         Logger.info(`spawning numberhuman in channel ${channel.id}`);
         const number = await spawnNumberhuman(channel);
         if (number.isOk()) {
-          const okNumber = number.unwrap();
+          const [okNumber, sentMessage] = number.unwrap();
+          const timeout = setTimeout(async () => {
+            Logger.info("user failed to catch in time");
+            client.off("messageCreate", handler);
+
+            const content = `the numberhuman fled.`;
+            await sentMessage.reply({ content, allowedMentions: { repliedUser: false } });
+          }, Math.floor(Math.random() * 20000));
+
           const handler = async (message: OmitPartialGroupDMChannel<Message>) => {
             if (message.channelId !== channel.id || message.author.bot) return;
             if (handlePlayerGuess(message, okNumber)) {
               client.off("messageCreate", handler);
+              clearTimeout(timeout);
 
               // @ts-expect-error: assertion fails for some reason even though the bot can only
               // be installed in a guild
