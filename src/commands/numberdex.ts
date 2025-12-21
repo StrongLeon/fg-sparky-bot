@@ -4,7 +4,7 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { ApplicationCommandOptionType, ChannelType, type Client, type CommandInteraction, type Message, type OmitPartialGroupDMChannel } from "discord.js";
+import { ApplicationCommandOptionType, ChannelType, PermissionFlagsBits, type Client, type CommandInteraction, type Message, type OmitPartialGroupDMChannel } from "discord.js";
 import { handlePlayerGuess } from "../numberdex/handler.ts";
 import { baker } from "../numberdex/index.ts";
 import { spawnNumberhuman } from "../numberdex/utils.ts";
@@ -111,7 +111,7 @@ const Numberdex: Command = {
       required: true,
     }],
   }],
-  cooldown: 0,
+  defaultMemberPermissions: PermissionFlagsBits.ManageChannels,
 };
 
 export default Numberdex;
