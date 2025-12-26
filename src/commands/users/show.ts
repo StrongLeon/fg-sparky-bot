@@ -29,7 +29,7 @@ export default async function userShow(client: Client, interaction: ServerSlashC
       `- legendary numbers: ${countEntriesTotal("legendary", guessedEntries).toString()} (total), ${countEntriesUnique("legendary", uniqueGuessed).toString()} (unique) [${formatPercent(percentage.legendary)}]`,
       "",
       "## numberdex:",
-      `numberhumans caught: ${numberhumansGuessed.toString()} (total), ${numberhumansGuessedUnique.toString()} unique`,
+      `numberhumans caught: ${numberhumansGuessed.length.toString()} (total), ${numberhumansGuessedUnique.length.toString()} (unique)`,
     ];
     await interaction.reply({
       content: content.join("\n"),
