@@ -1,6 +1,10 @@
 # changelog
 
-## 0.12.2 - December 21st, 2025
+## 0.12.3 - December 25th, 2025
+### fixes:
+- \[[`c1c0f4f2`](https://github.com/skylafalls/fg-sparky-bot/commit/c1c0f4f2258b1186d662457b4bc344e43b46b268)] - fix(streaks): uhhhh
+
+## 0.12.2 - December 25th, 2025
 ### features:
 - \[[`b0911f56`](https://github.com/skylafalls/fg-sparky-bot/commit/b0911f56fd30feb79070f37326dfd85fa98d93e2)] - feat(fg-sparky): add guessing streaks
 - \[[`060d5e7f`](https://github.com/skylafalls/fg-sparky-bot/commit/060d5e7f58c8deee2ccd687cc2be3d2f1a108ea4)] - feat(users/show): show numberdex information
