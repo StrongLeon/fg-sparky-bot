@@ -10,5 +10,5 @@
  * Useful for proper formatting.
  */
 export function joinStringArray(array: string[], joiner = "\n"): string {
-  return array.join(joiner);
+  return array.filter(Boolean).join(joiner);
 }

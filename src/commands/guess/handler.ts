@@ -70,6 +70,8 @@ export function handleResponse(client: Client, interaction: ChatInputCommandInte
       const user = await getUser(message.author.id, message.guildId);
       Logger.debug(`tried looking up user ${message.author.id} (found: ${user ? "true" : "false"})`);
 
+      const currentStreak = streakCollection.get(`${message.author.id}.${message.guildId!}`) ?? 0;
+
       if (user) {
         Logger.info(`user already exists, adding tokens`);
         // update the player stats first...
@@ -85,13 +87,13 @@ export function handleResponse(client: Client, interaction: ChatInputCommandInte
             "perhaps, a jet2 holiday may interest you?",
             "hey you guessed correctly, nice job!",
             `you also earned ${gain.toString()} tokens and now you have ${user.tokens.toString()} <:terminusfinity:1444859277515690075>!`,
-            `-# current streak count: ${streakCollection.get(`${message.author.id}.${message.guildId!}`)?.toString() ?? (0).toString()}`,
+            currentStreak > 0 ? `-# current streak count: ${currentStreak.toString()}` : "",
           ]));
         }
         await message.reply(joinStringArray([
           "hey you guessed correctly, nice job!",
           `you also earned ${gain.toString()} tokens and now you have ${user.tokens.toString()} <:terminusfinity:1444859277515690075>!`,
-          `-# current streak count: ${streakCollection.get(`${message.author.id}.${message.guildId!}`)?.toString() ?? (0).toString()}`,
+          currentStreak > 0 ? `-# current streak count: ${currentStreak.toString()}` : "",
         ]));
         // and saves.
         await user.save();
