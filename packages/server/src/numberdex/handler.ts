@@ -38,6 +38,7 @@ export function setupCallback(store: NumberhumanStore, job: ICron, channel: Send
           client.off("interactionCreate", handler);
 
           const content = `the numberhuman fled.`;
+          await sentMessage.edit({ components: [createButtonRow(true)] });
           await sentMessage.reply({ content, allowedMentions: { repliedUser: false } });
         }, NUMBERDEX_FLEE_DELAY);
 
