@@ -54,7 +54,6 @@ export function setupCallback(store: NumberhumanStore, job: ICron, channel: Send
             });
             const guess = interaction.fields.getTextInputValue(`numberhuman-guess-input-${interaction.channelId}`);
             if (handlePlayerGuess(guess, { number: okNumber.name, hashedNumber: okNumber.hashedName })) {
-              Logger.debug(`...it was!`);
               client.off("interactionCreate", handler);
               clearTimeout(timeout);
               await updateUserStats(interaction, okNumber);
