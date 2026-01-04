@@ -5,11 +5,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 import { NumberdexBaker } from "@fg-sparky/server";
+import { Logger, loginFormatter } from "@fg-sparky/utils";
 import type { Client, Interaction } from "discord.js";
 import { Commands } from "./commands/commands.ts";
 import { handleSlashCommand } from "./commands/listener.ts";
-import { loginFormatter } from "./utils/formatter.ts";
-import { Logger } from "./utils/logger.ts";
 
 export function registerHandlers(client: Client): void {
   client.once("clientReady", (client: Client<true>) => {

@@ -1,11 +1,12 @@
+import { UserProfile } from "@fg-sparky/server";
+import { formatPercent, Logger, ordinalOf, type ServerSlashCommandInteraction } from "@fg-sparky/utils";
 import type { Client, User as DiscordUser } from "discord.js";
-import { UserProfile } from "../../entities/user-profile";
-import { UNIQUE_ENTRIES } from "../../utils/constants";
-import { formatPercent } from "../../utils/formatter";
-import { Logger } from "../../utils/logger";
-import { ordinalOf } from "../../utils/numbers";
-import type { ServerSlashCommandInteraction } from "../types";
-import { LeaderboardDisplayType } from "../users";
+
+export enum LeaderboardDisplayType {
+  Tokens = "tokens",
+  TotalEntries = "total-entries",
+  UniqueEntries = "unique-entries",
+}
 
 async function getProfilesByType(
   leaderboardType: LeaderboardDisplayType,
@@ -38,7 +39,7 @@ async function getProfilesByType(
   }
 }
 
-export default async function userLeaderboardDisplay(client: Client, interaction: ServerSlashCommandInteraction): Promise<void> {
+export async function userLeaderboardDisplay(client: Client, interaction: ServerSlashCommandInteraction): Promise<void> {
   await interaction.deferReply();
 
   const displayAmount = (interaction.options.getNumber("amount", false) ?? 10);
@@ -75,6 +76,7 @@ export default async function userLeaderboardDisplay(client: Client, interaction
   const content = `\
     # User leaderboard for ${leaderboardHeader}: \n \
     ${users.map((user, index) => {
+      // oxlint-disable-next-line array-callback-return: all paths always returns
       if (index > Math.min(displayAmount, 25) - 1) return "no";
       const position = ordinalOf(index + 1);
       // Sometimes an IIFE looks better then chaining ternaries
@@ -94,7 +96,7 @@ export default async function userLeaderboardDisplay(client: Client, interaction
         }
         case LeaderboardDisplayType.UniqueEntries: {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          return `${header} ${position}: ${discordUsers[index]!.displayName} (${user.uniqueGuessed.length.toString()} entries) [${formatPercent(user.uniqueGuessed.length / UNIQUE_ENTRIES)}]`;
+          return `${header} ${position}: ${discordUsers[index]!.displayName} (${user.uniqueGuessed.length.toString()} entries) [${formatPercent(user.uniqueGuessed.length / NumberStore.UNIQUE_ENTRIES)}]`;
         }
       }
     }).filter(value => value !== "no").join("\n")}

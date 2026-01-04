@@ -4,7 +4,7 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { NumberdexBaker, NumberStore, setupCronJobs, UsersDB } from "@fg-sparky/server";
+import { NumberdexBaker, NumberhumanStore, NumberStore, setupCronJobs, UsersDB } from "@fg-sparky/server";
 import { Logger } from "@fg-sparky/utils";
 import { Command } from "commander";
 import { Client } from "discord.js";
@@ -36,6 +36,7 @@ declare global {
   namespace globalThis {
     var client: Client;
     var NumberStore: NumberStore;
+    var NumberhumanStore: NumberhumanStore;
   }
 }
 
@@ -45,6 +46,9 @@ try {
   Logger.loglevel = loglevel;
   Logger.notice("Loading entries from numbers.json");
   globalThis.NumberStore = await NumberStore.loadFile("numbers/numbers.json");
+  Logger.notice("Loading entries from numberhumans.json");
+  globalThis.NumberStore = await NumberStore.loadFile("numbers/numberhumans.json");
+
   Logger.notice("Initializing database");
   await UsersDB.initialize();
   await initClient(client, token);

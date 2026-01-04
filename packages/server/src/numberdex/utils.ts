@@ -4,35 +4,21 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { Err, Ok, type Result } from "@fg-sparky/utils";
+import { NUMBERDEX_SPAWN_MESSAGES, Result } from "@fg-sparky/utils";
 import { DiscordjsError, type Message, type SendableChannels } from "discord.js";
+import type { NumberhumanStore } from "./class.ts";
 import type { NumberhumanInfo } from "./schema.ts";
 
-export function findRandomNumber(): NumberhumanInfo {
-  const rarity = getRandomRarity();
-  const humanPool = numberhumans[rarity];
-  const randomIndex = Math.floor(Math.random() * humanPool.length);
-  const number = humanPool[randomIndex];
-  // Uh yeah same here
-  return {
-    number: number!.name,
-    hashedNumber: number!.hashedName,
-    image: number!.image,
-    rarity,
-    uuid: number!.uuid,
-  };
-}
-
-export async function spawnNumberhuman(channel: SendableChannels): Promise<Result<[NumberhumanInfo, Message], Error>> {
-  const numberhuman = findRandomNumber();
+export async function spawnNumberhuman(store: NumberhumanStore, channel: SendableChannels): Promise<Result<[NumberhumanInfo, Message], DiscordjsError | TypeError>> {
+  const numberhuman = store.getRandom();
   const randomSpawnMessage = NUMBERDEX_SPAWN_MESSAGES[Math.floor(Math.random() * NUMBERDEX_SPAWN_MESSAGES.length)];
   try {
-    return Ok([
+    return Result.ok([
       numberhuman,
       await channel.send({ content: randomSpawnMessage ?? "hello", files: [numberhuman.image] },
       )]);
   } catch (err) {
-    if (err instanceof DiscordjsError) return Err(err);
-    return Err("unknown error");
+    if (err instanceof DiscordjsError) return Result.err(err);
+    return Result.err(new TypeError("unknown error"));
   }
 }

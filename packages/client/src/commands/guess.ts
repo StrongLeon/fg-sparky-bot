@@ -4,9 +4,8 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import type { Difficulties } from "@fg-sparky/server";
 import { comptime } from "@fg-sparky/utils" with { type: "comptime" };
-import { Logger, type Command } from "@fg-sparky/utils";
+import { Logger, type Command, type Difficulties } from "@fg-sparky/utils";
 import { ApplicationCommandOptionType, AttachmentBuilder, type Client, type CommandInteraction } from "discord.js";
 import { handleResponse } from "./guess/handler.ts";
 

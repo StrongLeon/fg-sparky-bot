@@ -4,6 +4,9 @@
   "private": true,
   "license": "GPL-3.0-or-later",
   "version": "0.13.0",
+  "scripts": {
+    "build": "tsc --noEmit && rolldown -c"
+  },
   "dependencies": {
     "bufferutil": "catalog:discord",
     "discord.js": "catalog:discord",

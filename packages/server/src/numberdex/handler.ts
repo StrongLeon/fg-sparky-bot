@@ -13,7 +13,7 @@ export function setupCallback(job: ICron, channel: SendableChannels): ICron {
       const timeoutDuration = getRandomRange(0, 1200);
       Logger.info(`spawning numberhuman in channel ${channel.id} after ${timeoutDuration.toFixed(0)} seconds`);
       await Bun.sleep(timeoutDuration * 1000);
-      const number = await spawnNumberhuman(channel);
+      const number = await spawnNumberhuman(globalThis.NumberhumanStore, channel);
       if (number.isOk()) {
         const [okNumber, sentMessage] = number.unwrap();
         const timeout = setTimeout(async () => {

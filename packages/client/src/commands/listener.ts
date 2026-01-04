@@ -8,7 +8,7 @@ import { CooldownCollection, GuessCooldownCollection, Logger, type Command } fro
 import { MessageFlags, type Client, type CommandInteraction } from "discord.js";
 
 const commandCooldowns = new CooldownCollection();
-const guessCooldowns = new GuessCooldownCollection();
+export const guessCooldowns: GuessCooldownCollection = new GuessCooldownCollection();
 
 export async function handleSlashCommand(
   client: Client,

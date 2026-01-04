@@ -83,4 +83,34 @@ export class NumberStore {
     const number = data.find(value => value.uuid === id);
     return Option.from(number);
   }
+
+  /**
+   * Counts how many _unique_ entries the player has guessed for that difficulty
+   * in comparison to the data within this store.
+   * @returns The unique count of entries.
+   */
+  countEntriesUnique(difficulty: Difficulties, entries: string[]): number {
+    const filtered = this.data[difficulty].filter((entry) => {
+      for (const uuid of entries) {
+        if (entry.uuid === uuid) return true;
+      }
+      return false;
+    });
+    return filtered.length;
+  }
+
+  /**
+   * Counts how many _total_ entries the player has guessed for that difficulty
+   * in comparison to the data within this store.
+   * @returns The unique count of entries.
+   */
+  countEntriesTotal(difficulty: Difficulties, entries: string[]): number {
+    const filtered = entries.filter((uuid) => {
+      for (const entry of this.data[difficulty]) {
+        if (uuid === entry.uuid) return true;
+      }
+      return false;
+    });
+    return filtered.length;
+  }
 }

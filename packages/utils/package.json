@@ -7,7 +7,7 @@
   "dependencies": {
     "@sapphire/result": "catalog:utils",
     "chalk": "catalog:utils",
-    "comptime.ts": "catalog:utils",
+    "comptime.ts": "catalog:build",
     "cronbake": "catalog:utils",
     "discord.js": "catalog:discord",
     "zod": "catalog:types"

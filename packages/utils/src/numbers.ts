@@ -4,7 +4,7 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import type { Rarity } from "./types.ts";
+import type { Rarities } from "./types.ts";
 
 type Difficulties = "easy" | "medium" | "hard" | "legendary";
 
@@ -68,7 +68,7 @@ export function countEntriesTotal<T extends Record<Difficulties, { uuid: string 
   return filtered.length;
 }
 
-export function countHumansUnique(rarity: Rarity, entries: string[]): number {
+export function countHumansUnique<T extends Record<Rarities, { uuid: string }[]>>(numberhumans: T, rarity: Rarities, entries: string[]): number {
   const filtered = numberhumans[rarity].filter((entry) => {
     for (const uuid of entries) {
       if (entry.uuid === uuid) return true;
@@ -78,7 +78,7 @@ export function countHumansUnique(rarity: Rarity, entries: string[]): number {
   return filtered.length;
 }
 
-export function countHumansTotal(rarity: Rarity, entries: string[]): number {
+export function countHumansTotal<T extends Record<Rarities, { uuid: string }[]>>(numberhumans: T, rarity: Rarities, entries: string[]): number {
   const filtered = entries.filter((uuid) => {
     for (const entry of numberhumans[rarity]) {
       if (uuid === entry.uuid) return true;

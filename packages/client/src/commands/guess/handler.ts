@@ -8,8 +8,9 @@
 import { StreakCollection, createGuessHandler, createUser, getUser, type StoredNumberInfo as NumberInfo } from "@fg-sparky/server";
 import { Logger, joinStringArray } from "@fg-sparky/utils";
 import { Collection, type ChatInputCommandInteraction, type Client, type Message, type OmitPartialGroupDMChannel } from "discord.js";
-import { guessCooldowns } from "../../../../utils/src/cooldowns.ts";
+import { guessCooldowns } from "../listener.ts";
 import handleSpecialGuess from "./special-handler.ts";
+;
 
 const streakCollectionCollection = new Collection<string, StreakCollection>();
 const streakTracker = new Collection<string, string>();

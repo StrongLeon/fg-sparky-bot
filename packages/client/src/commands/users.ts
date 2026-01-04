@@ -6,15 +6,9 @@
  */
 import type { Command } from "@fg-sparky/utils";
 import { ApplicationCommandOptionType, type Client, type CommandInteraction } from "discord.js";
-import userLeaderboardDisplay from "./users/leaderboard.ts";
+import { LeaderboardDisplayType, userLeaderboardDisplay } from "./users/leaderboard.ts";
 import userShow from "./users/show.ts";
 import serverStatisticsDisplay from "./users/statistics.ts";
-
-export enum LeaderboardDisplayType {
-  Tokens = "tokens",
-  TotalEntries = "total-entries",
-  UniqueEntries = "unique-entries",
-}
 
 const User: Command = {
   async run(client: Client, interaction: CommandInteraction<"raw" | "cached">): Promise<void> {

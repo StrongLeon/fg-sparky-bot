@@ -20,6 +20,7 @@
     "eslint-plugin-oxlint": "catalog:linting",
     "jiti": "catalog:linting",
     "oxlint": "catalog:linting",
+    "rolldown": "catalog:build",
     "typescript-eslint": "catalog:linting"
   }
 }
