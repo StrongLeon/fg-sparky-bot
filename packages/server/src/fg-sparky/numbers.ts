@@ -9,43 +9,67 @@ import { randomDifficulty } from "../helpers.ts";
 import { type NumberInfo, Numbers as NumbersJsonSchema } from "./schema.ts";
 
 export class NumberStore {
-  readonly UNIQUE_ENTRIES: number;
-  readonly UNIQUE_EASY_ENTRIES: number;
-  readonly UNIQUE_MEDIUM_ENTRIES: number;
-  readonly UNIQUE_HARD_ENTRIES: number;
-  readonly UNIQUE_LEGENDARY_ENTRIES: number;
   /**
    * Constructs the {@link NumberStore} class. Because constructors cannot be asynchronous,
    * this is private and one of the static `load*` methods is used to construct the class.
    * @param data The numbers to load.
    */
-  constructor(private readonly data: Record<Difficulties, NumberInfo[]>) {
-    this.UNIQUE_EASY_ENTRIES = this.data.easy.length;
-    this.UNIQUE_MEDIUM_ENTRIES = this.data.medium.length;
-    this.UNIQUE_HARD_ENTRIES = this.data.hard.length;
-    this.UNIQUE_LEGENDARY_ENTRIES = this.data.legendary.length;
-    this.UNIQUE_ENTRIES = this.UNIQUE_EASY_ENTRIES + this.UNIQUE_HARD_ENTRIES + this.UNIQUE_MEDIUM_ENTRIES + this.UNIQUE_LEGENDARY_ENTRIES;
+  constructor(private data: Record<Difficulties, NumberInfo[]>) {}
+
+  get UNIQUE_ENTRIES(): number {
+    return this.UNIQUE_EASY_ENTRIES + this.UNIQUE_MEDIUM_ENTRIES + this.UNIQUE_HARD_ENTRIES + this.UNIQUE_LEGENDARY_ENTRIES;
+  }
+
+  get UNIQUE_EASY_ENTRIES(): number {
+    return this.data.easy.length;
+  }
+
+  get UNIQUE_MEDIUM_ENTRIES(): number {
+    return this.data.medium.length;
+  }
+
+  get UNIQUE_HARD_ENTRIES(): number {
+    return this.data.hard.length;
+  }
+
+  get UNIQUE_LEGENDARY_ENTRIES(): number {
+    return this.data.legendary.length;
   }
 
   /**
-   * Reads the data from the file path specified and constructs the NumberStore class.
-   * @param filePath The path to the numbers.json data.
-   * @returns An instance of the {@link NumberStore} class.
+   * Creates an instance of {@link NumberStore} without populating it with data.
+   * @returns An empty instance.
    */
-  static async loadFile(filePath: string): Promise<NumberStore> {
+  static create(): NumberStore {
+    return new NumberStore({
+      easy: [],
+      medium: [],
+      hard: [],
+      legendary: [],
+    });
+  }
+
+  /**
+    * Reads the data from the file path specified and initializes the class.
+    * @param filePath The path to the numbers.json data.
+    * @returns The fully initialized class.
+    */
+  async loadFile(filePath: string): Promise<this> {
     const file = Bun.file(filePath);
     const validatedData = NumbersJsonSchema.parse(await file.json());
-    return new NumberStore(validatedData);
+    this.data = validatedData;
+    return this;
   }
 
   /**
-   * Validates and parses the JSON data and constructs the NumberStore class for use.
-   * @param filePath The path to the numbers.json data.
-   * @returns An instance of the {@link NumberStore} class.
-   */
-  static loadJSON(fileData: unknown): NumberStore {
+    * Validates and parses the JSON data and initalizes the class.
+    * @param filePath The raw JSON data.
+    * @returns The fully initialized class.
+    */
+  loadJSON(fileData: unknown): this {
     const validatedData = NumbersJsonSchema.parse(fileData);
-    return new NumberStore(validatedData);
+    this.data = validatedData;
+    return this;
   }
 
   /**

@@ -1,5 +1,6 @@
 import { Baker, FilePersistenceProvider, Logger } from "@fg-sparky/utils";
 import type { Client } from "discord.js";
+import type { NumberhumanStore } from "./class.ts";
 import { setupCallback } from "./handler.ts";
 
 export const baker: Baker = Baker.create({
@@ -12,7 +13,7 @@ export const baker: Baker = Baker.create({
   },
 });
 
-export async function setupCronJobs(client: Client, baker: Baker): Promise<void> {
+export async function setupCronJobs(client: Client, store: NumberhumanStore, baker: Baker): Promise<void> {
   await baker.ready();
   const jobs = baker.getAllJobs();
   Logger.info(`re-adding callbacks to cron jobs...`);
@@ -20,7 +21,7 @@ export async function setupCronJobs(client: Client, baker: Baker): Promise<void>
     if (/numberdex-channel-[0-9]+/.test(name)) {
       const channel = await client.channels.fetch(name.slice(name.lastIndexOf("-") + 1));
       if (!channel || !channel.isSendable()) return;
-      return setupCallback(job, channel);
+      return setupCallback(store, job, channel);
     }
 
     return job;

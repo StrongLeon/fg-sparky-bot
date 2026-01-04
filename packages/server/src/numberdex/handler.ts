@@ -2,18 +2,19 @@ import { Logger, NUMBERDEX_FLEE_DELAY, getRandomRange, joinStringArray, type ICr
 import type { Message, OmitPartialGroupDMChannel, SendableChannels } from "discord.js";
 import { createGuessHandler, type GuessObject, type HandlerFunction } from "../handler.ts";
 import { createUser, getUser } from "../helpers.ts";
+import type { NumberhumanStore } from "./class.ts";
 import { spawnNumberhuman } from "./utils.ts";
 
 export const handlePlayerGuess: HandlerFunction<GuessObject> = createGuessHandler("blake2b512");
 
-export function setupCallback(job: ICron, channel: SendableChannels): ICron {
+export function setupCallback(store: NumberhumanStore, job: ICron, channel: SendableChannels): ICron {
   if (/numberdex-channel-[0-9]+/.test(job.name)) {
     Logger.debug(`setting up callback for cron job ${job.name}`);
     job.callback = async () => {
       const timeoutDuration = getRandomRange(0, 1200);
       Logger.info(`spawning numberhuman in channel ${channel.id} after ${timeoutDuration.toFixed(0)} seconds`);
       await Bun.sleep(timeoutDuration * 1000);
-      const number = await spawnNumberhuman(globalThis.NumberhumanStore, channel);
+      const number = await spawnNumberhuman(store, channel);
       if (number.isOk()) {
         const [okNumber, sentMessage] = number.unwrap();
         const timeout = setTimeout(async () => {

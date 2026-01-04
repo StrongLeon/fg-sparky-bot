@@ -1,11 +1,9 @@
 import { UserProfile } from "@fg-sparky/server";
 import { formatPercent, type ServerSlashCommandInteraction } from "@fg-sparky/utils";
 import type { Client } from "discord.js";
-
-const { UNIQUE_ENTRIES, UNIQUE_EASY_ENTRIES, UNIQUE_HARD_ENTRIES, UNIQUE_LEGENDARY_ENTRIES, UNIQUE_MEDIUM_ENTRIES } = globalThis.NumberStore;
+import { Numbers } from "../../stores.ts";
 
 export default async function serverStatisticsDisplay(_: Client, interaction: ServerSlashCommandInteraction): Promise<void> {
-  const { NumberStore } = globalThis;
   const users = await UserProfile.find({
     where: { guildId: interaction.guildId },
   });
@@ -26,28 +24,28 @@ export default async function serverStatisticsDisplay(_: Client, interaction: Se
       total: totalAcrossUsers.length.toString(),
       unique: uniqueAcrossUsers.length.toString(),
       easy: {
-        total: NumberStore.countEntriesTotal("easy", totalAcrossUsers).toString(),
-        unique: NumberStore.countEntriesUnique("easy", uniqueAcrossUsers).toString(),
+        total: Numbers.countEntriesTotal("easy", totalAcrossUsers).toString(),
+        unique: Numbers.countEntriesUnique("easy", uniqueAcrossUsers).toString(),
       },
       medium: {
-        total: NumberStore.countEntriesTotal("medium", totalAcrossUsers).toString(),
-        unique: NumberStore.countEntriesUnique("medium", uniqueAcrossUsers).toString(),
+        total: Numbers.countEntriesTotal("medium", totalAcrossUsers).toString(),
+        unique: Numbers.countEntriesUnique("medium", uniqueAcrossUsers).toString(),
       },
       hard: {
-        total: NumberStore.countEntriesTotal("hard", totalAcrossUsers).toString(),
-        unique: NumberStore.countEntriesUnique("hard", uniqueAcrossUsers).toString(),
+        total: Numbers.countEntriesTotal("hard", totalAcrossUsers).toString(),
+        unique: Numbers.countEntriesUnique("hard", uniqueAcrossUsers).toString(),
       },
       legendary: {
-        total: NumberStore.countEntriesTotal("legendary", totalAcrossUsers).toString(),
-        unique: NumberStore.countEntriesUnique("legendary", uniqueAcrossUsers).toString(),
+        total: Numbers.countEntriesTotal("legendary", totalAcrossUsers).toString(),
+        unique: Numbers.countEntriesUnique("legendary", uniqueAcrossUsers).toString(),
       },
     },
     numberPercentages: {
-      total: formatPercent(uniqueAcrossUsers.length / UNIQUE_ENTRIES),
-      easy: formatPercent(NumberStore.countEntriesUnique("easy", uniqueAcrossUsers) / UNIQUE_EASY_ENTRIES),
-      medium: formatPercent(NumberStore.countEntriesUnique("medium", uniqueAcrossUsers) / UNIQUE_MEDIUM_ENTRIES),
-      hard: formatPercent(NumberStore.countEntriesUnique("hard", uniqueAcrossUsers) / UNIQUE_HARD_ENTRIES),
-      legendary: formatPercent(NumberStore.countEntriesUnique("legendary", uniqueAcrossUsers) / UNIQUE_LEGENDARY_ENTRIES),
+      total: formatPercent(uniqueAcrossUsers.length / Numbers.UNIQUE_ENTRIES),
+      easy: formatPercent(Numbers.countEntriesUnique("easy", uniqueAcrossUsers) / Numbers.UNIQUE_EASY_ENTRIES),
+      medium: formatPercent(Numbers.countEntriesUnique("medium", uniqueAcrossUsers) / Numbers.UNIQUE_MEDIUM_ENTRIES),
+      hard: formatPercent(Numbers.countEntriesUnique("hard", uniqueAcrossUsers) / Numbers.UNIQUE_HARD_ENTRIES),
+      legendary: formatPercent(Numbers.countEntriesUnique("legendary", uniqueAcrossUsers) / Numbers.UNIQUE_LEGENDARY_ENTRIES),
     },
   };
 

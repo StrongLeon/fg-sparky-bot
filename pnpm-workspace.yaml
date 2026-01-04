@@ -5,6 +5,7 @@ catalogs:
   build:
     comptime.ts: ^0.8.0
     rolldown: ^1.0.0-beta.54
+    vite: ^8.0.0-beta.2
   db:
     better-sqlite3: ^12.5.0
     reflect-metadata: ^0.2.2

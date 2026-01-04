@@ -7,6 +7,7 @@
 import { comptime } from "@fg-sparky/utils" with { type: "comptime" };
 import { Logger, type Command, type Difficulties } from "@fg-sparky/utils";
 import { ApplicationCommandOptionType, AttachmentBuilder, type Client, type CommandInteraction } from "discord.js";
+import { Numbers } from "../stores.ts";
 import { handleResponse } from "./guess/handler.ts";
 
 const Guess: Command = {
@@ -18,7 +19,7 @@ const Guess: Command = {
     }
 
     const difficulty = interaction.options.get("difficulty", true).value as Exclude<Difficulties, "legendary"> | "random";
-    const number = difficulty === "random" ? NumberStore.getRandom() : NumberStore.getRandomByDifficulty(difficulty);
+    const number = difficulty === "random" ? Numbers.getRandom() : Numbers.getRandomByDifficulty(difficulty);
     Logger.info(`Player requested for number of difficulty ${difficulty}, which has an id of ${number.uuid}`);
 
     // The message that will be sent to the player, specifiying the difficulty,

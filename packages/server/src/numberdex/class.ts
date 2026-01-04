@@ -18,27 +18,41 @@ export class NumberhumanStore {
    * this is private and one of the static `load*` methods is used to construct the class.
    * @param data The numbers to load.
    */
-  private constructor(private readonly data: Record<Rarities, NumberhumanInfo[]>) {}
+  private constructor(private data: Record<Rarities, NumberhumanInfo[]>) {}
 
   /**
-   * Reads the data from the file path specified and constructs the NumberhumanStore class.
-   * @param filePath The path to the numbers.json data.
-   * @returns An instance of the {@link NumberhumanStore} class.
-   */
-  static async loadFile(filePath: string): Promise<NumberhumanStore> {
-    const file = Bun.file(filePath);
-    const validatedData = NumbersJsonSchema.parse(await file.json());
-    return new NumberhumanStore(validatedData);
+     * Creates an instance of {@link NumberhumanStore} without populating it with data.
+     * @returns An empty instance.
+     */
+  static create(): NumberhumanStore {
+    return new NumberhumanStore({
+      common: [],
+      epic: [],
+      rare: [],
+    });
   }
 
   /**
-   * Validates and parses the JSON data and constructs the NumberhumanStore class for use.
-   * @param filePath The path to the numbers.json data.
-   * @returns An instance of the {@link NumberhumanStore} class.
-   */
-  static loadJSON(fileData: unknown): NumberhumanStore {
+     * Reads the data from the file path specified and initializes the class.
+     * @param filePath The path to the numberhumans.json data.
+     * @returns The fully initialized class.
+     */
+  async loadFile(filePath: string): Promise<this> {
+    const file = Bun.file(filePath);
+    const validatedData = NumbersJsonSchema.parse(await file.json());
+    this.data = validatedData;
+    return this;
+  }
+
+  /**
+     * Validates and parses the JSON data and initalizes the class.
+     * @param filePath The raw JSON data.
+     * @returns The fully initialized class.
+     */
+  loadJSON(fileData: unknown): this {
     const validatedData = NumbersJsonSchema.parse(fileData);
-    return new NumberhumanStore(validatedData);
+    this.data = validatedData;
+    return this;
   }
 
   /**

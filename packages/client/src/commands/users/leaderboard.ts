@@ -1,6 +1,7 @@
 import { UserProfile } from "@fg-sparky/server";
 import { formatPercent, Logger, ordinalOf, type ServerSlashCommandInteraction } from "@fg-sparky/utils";
 import type { Client, User as DiscordUser } from "discord.js";
+import { Numbers } from "../../stores.ts";
 
 export enum LeaderboardDisplayType {
   Tokens = "tokens",
@@ -96,7 +97,7 @@ export async function userLeaderboardDisplay(client: Client, interaction: Server
         }
         case LeaderboardDisplayType.UniqueEntries: {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          return `${header} ${position}: ${discordUsers[index]!.displayName} (${user.uniqueGuessed.length.toString()} entries) [${formatPercent(user.uniqueGuessed.length / NumberStore.UNIQUE_ENTRIES)}]`;
+          return `${header} ${position}: ${discordUsers[index]!.displayName} (${user.uniqueGuessed.length.toString()} entries) [${formatPercent(user.uniqueGuessed.length / Numbers.UNIQUE_ENTRIES)}]`;
         }
       }
     }).filter(value => value !== "no").join("\n")}

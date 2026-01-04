@@ -7,6 +7,7 @@
 import { createUser, getUser, handlePlayerGuess, NumberdexBaker, spawnNumberhuman } from "@fg-sparky/server";
 import { getRandomRange, joinStringArray, Logger, NUMBERDEX_FLEE_DELAY, type Command } from "@fg-sparky/utils";
 import { ApplicationCommandOptionType, ChannelType, PermissionFlagsBits, type Client, type CommandInteraction, type Message, type OmitPartialGroupDMChannel } from "discord.js";
+import { Numberhumans } from "../stores.ts";
 
 const Numberdex: Command = {
   async run(client: Client, interaction: CommandInteraction<"raw" | "cached">): Promise<void> {
@@ -25,7 +26,7 @@ const Numberdex: Command = {
             const timeoutDuration = getRandomRange(0, 1200);
             Logger.info(`spawning numberhuman in channel ${channel.id} after ${timeoutDuration.toFixed(0)} seconds`);
             await Bun.sleep(timeoutDuration * 1000);
-            const number = await spawnNumberhuman(globalThis.NumberhumanStore, channel);
+            const number = await spawnNumberhuman(Numberhumans, channel);
             if (number.isOk()) {
               const [okNumber, sentMessage] = number.unwrap();
               const timeout = setTimeout(async () => {

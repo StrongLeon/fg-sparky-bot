@@ -4,7 +4,6 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { NumberStore } from "@fg-sparky/server";
 import { Logger } from "@fg-sparky/utils";
 import type { Client } from "discord.js";
 import { Commands } from "./commands/commands";
@@ -18,5 +17,3 @@ export async function initClient(client: Client, token: string): Promise<void> {
   Logger.info("Logging in");
   await client.login(token);
 }
-
-export const Numbers: NumberStore = await NumberStore.loadFile("numbers/numbers.json");
