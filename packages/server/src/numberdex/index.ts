@@ -6,5 +6,6 @@
  */
 export { NumberhumanStore } from "./class.ts";
 export { baker as NumberdexBaker, setupCronJobs } from "./cron.ts";
+export { setupCallback } from "./handler.ts";
 export { NumberhumanInfo } from "./schema.ts";
 

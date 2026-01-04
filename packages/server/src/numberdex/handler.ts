@@ -1,6 +1,7 @@
-import { createGuessHandler, type NumberhumanStore } from "@fg-sparky/server";
 import { Logger, NUMBERDEX_FLEE_DELAY, type ICron } from "@fg-sparky/utils";
 import { ComponentType, TextInputStyle, type Interaction, type ModalComponentData, type SendableChannels } from "discord.js";
+import { createGuessHandler } from "../handler.ts";
+import type { NumberhumanStore } from "./class.ts";
 import { createButtonRow, spawnNumberhuman, updateUserStats } from "./utils.ts";
 
 const guessModal: ModalComponentData = {

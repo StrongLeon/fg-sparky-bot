@@ -4,9 +4,12 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { createUser, getUser, NumberhumanData, type NumberhumanInfo, type NumberhumanStore } from "@fg-sparky/server";
 import { formatPercent, getRandomRange, joinStringArray, Logger, NUMBERDEX_SPAWN_MESSAGES, Result } from "@fg-sparky/utils";
 import { ActionRowBuilder, bold, ButtonBuilder, ButtonStyle, ComponentType, userMention, type Message, type ModalMessageModalSubmitInteraction, type SendableChannels } from "discord.js";
+import { createUser, getUser } from "../helpers.ts";
+import { NumberhumanData } from "../users/numberhuman.ts";
+import type { NumberhumanStore } from "./class";
+import type { NumberhumanInfo } from "./schema";
 
 export function createButtonRow(disabled?: boolean): ActionRowBuilder<ButtonBuilder> {
   const button = ButtonBuilder.from({
