@@ -21,7 +21,7 @@ const Numberdex: Command = {
         const channel = interaction.options.getChannel("channel", true, [ChannelType.GuildText]);
         const cron = NumberdexBaker.add({
           name: `numberdex-channel-${channel.id}`,
-          cron: "@every_minute",
+          cron: "@every_20_minutes",
           async callback(): Promise<void> {},
         });
         setupCallback(Numberhumans, cron, channel);
