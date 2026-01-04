@@ -4,20 +4,21 @@ import { createGuessHandler } from "../handler.ts";
 import type { NumberhumanStore } from "./class.ts";
 import { createButtonRow, spawnNumberhuman, updateUserStats } from "./utils.ts";
 
-const guessModal: ModalComponentData = {
+const createGuessModal = (channelId: string): ModalComponentData => ({
   title: "yeah",
-  customId: `numberhuman-guess-modal`,
+  id: channelId,
+  customId: `numberhuman-guess-modal-${channelId}`,
   components: [{
     id: 0,
     label: "what's the human's name?",
     type: ComponentType.Label,
     component: {
-      customId: "numberhuman-guess-input",
+      customId: `numberhuman-guess-input-${channelId}`,
       style: TextInputStyle.Short,
       type: ComponentType.TextInput,
     },
   }],
-};
+});
 
 const handlePlayerGuess = createGuessHandler("blake2b512");
 
@@ -41,14 +42,19 @@ export function setupCallback(store: NumberhumanStore, job: ICron, channel: Send
         }, NUMBERDEX_FLEE_DELAY);
 
         const handler = async (interaction: Interaction) => {
+          if (interaction.channelId !== channel.id) return;
           if (interaction.isButton()) {
-            await interaction.showModal(guessModal);
-          } else if (interaction.inGuild() && interaction.isModalSubmit() && interaction.isFromMessage()) {
+            Logger.debug(`User ${interaction.user.displayName} clicked the button`);
+            await interaction.showModal(createGuessModal(interaction.channelId));
+          } else if (interaction.inGuild() && interaction.isModalSubmit() && interaction.isFromMessage()
+            && interaction.customId === `numberhuman-guess-modal-${interaction.channelId}`) {
+            Logger.debug(`User ${interaction.user.displayName} submitted the numberhuman, verifying it's correct...`);
             await interaction.update({
               components: [createButtonRow(true)],
             });
-            const guess = interaction.fields.getTextInputValue("numberhuman-guess-input");
+            const guess = interaction.fields.getTextInputValue(`numberhuman-guess-input-${interaction.channelId}`);
             if (handlePlayerGuess(guess, { number: okNumber.name, hashedNumber: okNumber.hashedName })) {
+              Logger.debug(`...it was!`);
               client.off("interactionCreate", handler);
               clearTimeout(timeout);
               await updateUserStats(interaction, okNumber);
