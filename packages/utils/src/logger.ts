@@ -7,41 +7,38 @@
 import chalk from "chalk";
 import { loggerFormatter } from "./formatter.ts";
 
-export namespace Logger {
-  // re-assigned in main.ts
-  // eslint-disable-next-line prefer-const
-  export let loglevel = 0;
-
-  export function debug(str: string): void {
-    if (loglevel > 0) return;
+export const Logger = {
+  loglevel: 0,
+  debug(str: string): void {
+    if (this.loglevel > 0) return;
     console.debug(`[${loggerFormatter.format(Date.now())}] ${chalk.blue("[DEBUG]")}: %s`, str);
-  }
+  },
 
-  export function info(str: string): void {
-    if (loglevel > 1) return;
+  info(str: string): void {
+    if (this.loglevel > 1) return;
     console.log(`[${loggerFormatter.format(Date.now())}] ${chalk.grey("[INFO]")}: %s`, str);
-  }
+  },
 
-  export function notice(str: string): void {
-    if (loglevel > 2) return;
+  notice(str: string): void {
+    if (this.loglevel > 2) return;
     console.log(`[${loggerFormatter.format(Date.now())}] ${chalk.whiteBright("[NOTICE]")}: %s`, str);
-  }
+  },
 
-  export function warn(str: string): void {
-    if (loglevel > 3) return;
+  warn(str: string): void {
+    if (this.loglevel > 3) return;
     console.warn(`[${loggerFormatter.format(Date.now())}] ${chalk.yellowBright("[WARN]")}: %s`, str);
-  }
+  },
 
-  export function error(str: string): void {
-    if (loglevel > 4) return;
+  error(str: string): void {
+    if (this.loglevel > 4) return;
     console.error(`[${loggerFormatter.format(Date.now())}] ${chalk.redBright("[ERROR]")}: %s`, str);
-  }
+  },
 
-  export function crit(str: string): void {
+  crit(str: string): void {
     console.error(`[${loggerFormatter.format(Date.now())}] ${chalk.magentaBright("[CRIT]")}: %s`, str);
-  }
+  },
 
-  export function success(str: string): void {
+  success(str: string): void {
     console.log(`[${loggerFormatter.format(Date.now())}] ${chalk.greenBright("[SUCCESS]")}: %s`, str);
-  }
+  },
 };

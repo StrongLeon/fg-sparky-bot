@@ -2,6 +2,7 @@
   "name": "@fg-sparky/server",
   "description": "Data-handling server for the FG sparky bot",
   "private": true,
+  "type": "module",
   "packageManager": "bun@1.3.5",
   "license": "GPL-3.0-or-later",
   "version": "0.13.0",

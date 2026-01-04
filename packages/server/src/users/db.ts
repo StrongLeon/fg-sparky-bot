@@ -4,15 +4,17 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+import sqliteDriver from "better-sqlite3";
 import { DataSource } from "typeorm";
 import { UserProfile } from "./user-profile.ts";
 
 export const UsersDB: DataSource = new DataSource({
-  type: "sqlite",
+  type: "better-sqlite3",
   database: "sparky-bot-db.sqlite",
   synchronize: true,
   logging: true,
   entities: [UserProfile],
   migrations: [],
   subscribers: [],
+  driver: sqliteDriver,
 });

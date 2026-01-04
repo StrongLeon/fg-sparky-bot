@@ -2,6 +2,7 @@
   "name": "@fg-sparky/utils",
   "description": "Utilities for FG sparky bot",
   "private": true,
+  "type": "module",
   "license": "GPL-3.0-or-later",
   "version": "0.13.0",
   "dependencies": {

@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "catalog:linting",
+    "@types/better-sqlite3": "catalog:types",
     "@types/bun": "catalog:types",
     "@types/node": "catalog:types",
     "eslint": "catalog:linting",

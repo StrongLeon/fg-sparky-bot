@@ -1,7 +1,5 @@
 // oxlint-disable export: some packages are exported as CJS not ESM
 export * from "@sapphire/result";
-export * from "comptime.ts";
-export { comptime as comptimePlugin } from "comptime.ts/vite";
 export { Baker, Cron, FilePersistenceProvider, type Logger as CronLogger, type ICron } from "cronbake";
 export { Collection } from "discord.js";
 export { strict as assert } from "node:assert/strict";

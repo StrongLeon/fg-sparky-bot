@@ -1,4 +1,4 @@
-import { comptimePlugin } from "@fg-sparky/utils";
+import { comptime } from "comptime.ts/vite";
 import { defineConfig, type RolldownOptions } from "rolldown";
 
 const config: RolldownOptions = defineConfig({
@@ -17,6 +17,9 @@ const config: RolldownOptions = defineConfig({
     minify: true,
     sourcemap: "inline",
   },
-  plugins: [comptimePlugin()],
+  tsconfig: "../../tsconfig.json",
+  platform: "node",
+  plugins: [comptime()],
 });
+
 export default config;

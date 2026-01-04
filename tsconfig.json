@@ -26,7 +26,7 @@
     "strict": true,
     "target": "esnext",
     "verbatimModuleSyntax": true,
-    "types": ["bun", "node"],
+    "types": ["bun", "node", "better-sqlite3"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true
