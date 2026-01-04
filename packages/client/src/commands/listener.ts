@@ -38,12 +38,14 @@ export async function handleSlashCommand(
     return;
   }
 
-  for (const timestamp of commandCooldowns.check(slashCommand, interaction.user.id)) {
+  if (slashCommand.name !== "guess") {
+    for (const timestamp of commandCooldowns.check(slashCommand, interaction.user.id)) {
     // oxlint-disable-next-line no-await-in-loop: not a loop (using iterators to unwrap the option)
-    await interaction.reply({
-      content: `Chill man you can't run /${slashCommand.name}, you can try again <t:${timestamp.toString()}:R>.`,
-      flags: MessageFlags.Ephemeral,
-    });
+      await interaction.reply({
+        content: `Chill man you can't run /${slashCommand.name}, you can try again <t:${timestamp.toString()}:R>.`,
+        flags: MessageFlags.Ephemeral,
+      });
+    }
   }
 
   Logger.info(`Running command ${interaction.commandName}`);
