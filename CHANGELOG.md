@@ -1,5 +1,14 @@
 # changelog
 
+## 0.14.2 - January 5th, 2026
+last release before v1.0.0, hopefully
+
+### fixes:
+- \[[`9671981d`](https://github.com/skylafalls/fg-sparky-bot/commit/9671981d5763592d9237531d89ce6ce7f6d7c673)] - fix(numberdex): reply to the interaction instead of deferring
+- \[[`ca82a247`](https://github.com/skylafalls/fg-sparky-bot/commit/ca82a247c6fc7c63143a19c031d70b5975e6ac9b)] - fix(numberdex): reply and don't disable the catch button if it was wrong
+- \[[`ceeb86b8`](https://github.com/skylafalls/fg-sparky-bot/commit/ceeb86b8986833c78b235aa5e641db21aa8d08ab)] - fix(numberdex/spawn): re-randomize the spawn timings
+- \[[`b252baac`](https://github.com/skylafalls/fg-sparky-bot/commit/b252baac4a22a986dfa7c02539bddd05e2f5091e)] - fix(guess): return null instead of unknown if the entry doesn't have a name ([#17](https://github.com/skylafalls/fg-sparky-bot/pull/17))
+
 ## 0.14.1 - January 5th, 2026
 ### fixes:
 - \[[`db55d0f7`](https://github.com/skylafalls/fg-sparky-bot/commit/db55d0f7bd88804a76ee6f187db96aa42b913986)] - fix(guess): pass the message content directly instead of the object
