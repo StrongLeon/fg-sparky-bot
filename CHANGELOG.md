@@ -1,5 +1,9 @@
 # changelog
 
+## 0.14.1 - January 5th, 2026
+### fixes:
+- \[[`db55d0f7`](https://github.com/skylafalls/fg-sparky-bot/commit/db55d0f7bd88804a76ee6f187db96aa42b913986)] - fix(guess): pass the message content directly instead of the object
+
 ## 0.14.0 - January 4th, 2026
 ### features:
 - \[[`feffb8ea`](https://github.com/skylafalls/fg-sparky-bot/commit/feffb8ea25d5ab208832a2eb67796a644751513)] - feat(numberdex): add stats about numberhumans ([#15](https://github.com/skylafalls/fg-sparky-bot/pull/15))
