@@ -4,79 +4,52 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { type Difficulties, Option, type StoredNumberInfo } from "@fg-sparky/utils";
+import { Option, type Difficulties, type None, type StoredNumberInfo } from "@fg-sparky/utils";
 import { randomDifficulty } from "../helpers.ts";
-import { type NumberInfo, Numbers as NumbersJsonSchema } from "./schema.ts";
+import { DataStore } from "../store.ts";
+import { NumberInfo } from "./schema.ts";
 
-export class NumberStore {
+export class NumberStore extends DataStore<NumberInfo> {
   /**
-   * Constructs the {@link NumberStore} class. Because constructors cannot be asynchronous,
-   * this is private and one of the static `load*` methods is used to construct the class.
-   * @param data The numbers to load.
+   * Constructs the {@link NumberStore} class, passing in a JSON file path as a backing storage.
    */
-  constructor(private data: Record<Difficulties, NumberInfo[]>) {}
+  constructor(file: string) {
+    super(file, NumberInfo);
+  }
 
   get UNIQUE_ENTRIES(): number {
     return this.UNIQUE_EASY_ENTRIES + this.UNIQUE_MEDIUM_ENTRIES + this.UNIQUE_HARD_ENTRIES + this.UNIQUE_LEGENDARY_ENTRIES;
   }
 
   get UNIQUE_EASY_ENTRIES(): number {
-    return this.data.easy.length;
+    return this.data.filter(value => value.difficulty === "easy").length;
   }
 
   get UNIQUE_MEDIUM_ENTRIES(): number {
-    return this.data.medium.length;
+    return this.data.filter(value => value.difficulty === "medium").length;
   }
 
   get UNIQUE_HARD_ENTRIES(): number {
-    return this.data.hard.length;
+    return this.data.filter(value => value.difficulty === "hard").length;
   }
 
   get UNIQUE_LEGENDARY_ENTRIES(): number {
-    return this.data.legendary.length;
+    return this.data.filter(value => value.difficulty === "legendary").length;
   }
 
   /**
-   * Creates an instance of {@link NumberStore} without populating it with data.
+   * Creates an instance of {@link NumberStore}.
    * @returns An empty instance.
    */
-  static create(): NumberStore {
-    return new NumberStore({
-      easy: [],
-      medium: [],
-      hard: [],
-      legendary: [],
-    });
-  }
-
-  /**
-    * Reads the data from the file path specified and initializes the class.
-    * @param filePath The path to the numbers.json data.
-    * @returns The fully initialized class.
-    */
-  async loadFile(filePath: string): Promise<this> {
-    const file = Bun.file(filePath);
-    const validatedData = NumbersJsonSchema.parse(await file.json());
-    this.data = validatedData;
-    return this;
-  }
-
-  /**
-    * Validates and parses the JSON data and initalizes the class.
-    * @param filePath The raw JSON data.
-    * @returns The fully initialized class.
-    */
-  loadJSON(fileData: unknown): this {
-    const validatedData = NumbersJsonSchema.parse(fileData);
-    this.data = validatedData;
-    return this;
+  static create(file: string): NumberStore {
+    return new NumberStore(file);
   }
 
   /**
    * Returns a random entry from the collection of entries.
    * @returns The entry.
    */
-  getRandom(): StoredNumberInfo {
+  getRandom(): Option<StoredNumberInfo> {
     const difficultyPool = randomDifficulty();
     return this.getRandomByDifficulty(difficultyPool);
   }
@@ -85,27 +58,19 @@ export class NumberStore {
    * Returns a random entry from the specified difficulty pool.
    * @returns The entry.
    */
-  getRandomByDifficulty(difficulty: Difficulties): StoredNumberInfo {
-    const numbers = this.data[difficulty];
-    const number = numbers[Math.floor(Math.random() * numbers.length)]!;
+  getRandomByDifficulty(difficulty: Difficulties): Option<StoredNumberInfo> {
+    const reducedPool = this.data.filter(value => value.difficulty === difficulty);
+    const number = reducedPool[Math.floor(Math.random() * reducedPool.length)];
 
-    return {
+    if (!number) return Option.none as None<StoredNumberInfo>;
+
+    return Option.from({
       number: number.name,
       hashedNumber: number.hashedName,
       image: number.image,
       uuid: number.uuid,
       difficulty,
-    };
-  }
-
-  /**
-   * Returns an entry based on the UUID. Returns a Rust option if it doesn't exist.
-   * @returns The entry or None.
-   */
-  getByID(id: string): Option<NumberInfo> {
-    const data = [...this.data.easy, ...this.data.medium, ...this.data.hard, ...this.data.legendary];
-    const number = data.find(value => value.uuid === id);
-    return Option.from(number);
+    });
   }
 
   /**
@@ -114,7 +79,8 @@ export class NumberStore {
    * @returns The unique count of entries.
    */
   countEntriesUnique(difficulty: Difficulties, entries: string[]): number {
-    const filtered = this.data[difficulty].filter((entry) => {
+    const filtered = this.data.filter((entry) => {
+      if (entry.difficulty !== difficulty) return false;
       for (const uuid of entries) {
         if (entry.uuid === uuid) return true;
       }
@@ -130,8 +96,8 @@ export class NumberStore {
    */
   countEntriesTotal(difficulty: Difficulties, entries: string[]): number {
     const filtered = entries.filter((uuid) => {
-      for (const entry of this.data[difficulty]) {
-        if (uuid === entry.uuid) return true;
+      for (const entry of this.data) {
+        if (uuid === entry.uuid && entry.difficulty === difficulty) return true;
       }
       return false;
     });
