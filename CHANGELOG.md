@@ -1,5 +1,12 @@
 # changelog
 
+## 1.0.0 - January 6th, 2026
+i was correct but the defining feature i wanted couldn't make it in time :<
+
+### fixes:
+- \[[`0390ed9f`](https://github.com/skylafalls/fg-sparky-bot/commit/0390ed9f18b6e89fc317611b879c7cf8da5b5b34)] - chore(sparky): update entries
+- \[[`b40b7b48`](https://github.com/skylafalls/fg-sparky-bot/commit/b40b7b488bef55267a58c4152ec84ade8c643cb3)] - fix(numberdex): reply and don't disable the catch button if it was wrong
+  
 ## 0.14.2 - January 5th, 2026
 last release before v1.0.0, hopefully
 
