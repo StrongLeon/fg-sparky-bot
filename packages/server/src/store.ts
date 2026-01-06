@@ -37,6 +37,7 @@ export class DataStore<T extends DataStoreEntry = DataStoreEntry> {
     }
 
     await this.load();
+    return this;
   }
 
   /**
