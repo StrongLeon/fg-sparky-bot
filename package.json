@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "bun run build && bun run --watch dist/main.js",
     "build": "bun run scripts/bundle.ts",
-    "lint": "oxlint . --ignore-path=.gitignore && eslint .",
-    "lint:fix": "oxlint --fix --fix-suggestions . --ignore-path=.gitignore && eslint --fix .",
+    "lint": "oxlint . --type-check --type-aware --ignore-path=.gitignore && eslint .",
+    "lint:fix": "oxlint --type-check --type-aware --fix --fix-suggestions . --ignore-path=.gitignore && eslint --fix .",
     "typecheck": "tsc -p tsconfig.json"
   },
   "devDependencies": {
@@ -22,6 +22,6 @@
     "jiti": "catalog:linting",
     "oxlint": "catalog:linting",
     "rolldown": "catalog:build",
-    "typescript-eslint": "catalog:linting"
+    "oxlint-tsgolint": "catalog:linting"
   }
 }

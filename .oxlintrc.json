@@ -180,6 +180,8 @@
     "typescript/only-throw-error": "warn",
     "typescript/promise-function-async": "warn",
     "typescript/require-await": "warn",
-    "typescript/switch-exhaustiveness-check": "warn"
+    "typescript/switch-exhaustiveness-check": "warn",
+    // Disables
+    "import/no-dependencies": "off"
   }
 }
