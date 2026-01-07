@@ -8,11 +8,12 @@ import { NumberdexBaker, setupCronJobs, UsersDB } from "@fg-sparky/server";
 import { Logger } from "@fg-sparky/utils";
 import { Command } from "commander";
 import { Client } from "discord.js";
+import packageJson from "../package.json" with { type: "json" };
 import { initClient } from "./index.ts";
 import { Numberhumans, Numbers } from "./stores.ts";
 
 const program = new Command()
-  .version("0.14.2")
+  .version(packageJson.version)
   .description("FG sparky bot as a cli")
   .option("-t, --token <token>", "The discord bot token to login with (env variable: DISCORD_TOKEN)")
   .option("-l, --loglevel [loglevel]", "Logging level as a number (env variable: LOG_LEVEL)");

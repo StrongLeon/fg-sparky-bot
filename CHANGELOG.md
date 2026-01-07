@@ -1,5 +1,20 @@
 # changelog
 
+## 1.1.0 - January 6th, 2026
+next release will have the uhhhhhh yeah
+
+### features:
+- \[[`3c118018`](https://github.com/skylafalls/fg-sparky-bot/commit/3c11801829dee0e8930e558fc011a0b4866bcba2)] - feat(numberdex): new responses for success/fail ([#21](https://github.com/skylafalls/fg-sparky-bot/pull/17))
+
+### refactors:
+- \[[`06ef043c`](https://github.com/skylafalls/fg-sparky-bot/commit/06ef043c86b6a439ea331d556aac3aa817dd5286)] - refactor(sparky): change data layout for numberstore ([#19](https://github.com/skylafalls/fg-sparky-bot/pull/19))
+
+### chores:
+- \[[`4e529cb4`](https://github.com/skylafalls/fg-sparky-bot/commit/4e529cb4e16e6686411fbad5f978fc75632291e4)] - chore(meta): omg vro 😭✌️
+- \[[`d0324b50`](https://github.com/skylafalls/fg-sparky-bot/commit/d0324b5086c461099ddc9d2a1fb075b2e445ce23)] - chore(meta): okay fine you win
+- \[[`5acf0340`](https://github.com/skylafalls/fg-sparky-bot/commit/5acf034063838ee7545177c48e1deba1a93d2f08)] - chore(meta): i mean generated
+- \[[`a118723d`](https://github.com/skylafalls/fg-sparky-bot/commit/a118723d3cfb42802cf62c6ea2cd50238782afa2)] - chore(meta): mark the json as vendored
+
 ## 1.0.0 - January 6th, 2026
 i was correct but the defining feature i wanted couldn't make it in time :<
 
