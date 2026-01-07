@@ -10,7 +10,7 @@ import { ApplicationCommandOptionType, ChannelType, PermissionFlagsBits, type Cl
 import { Numberhumans } from "../stores.ts";
 
 const Numberdex: Command = {
-  async run(client: Client, interaction: CommandInteraction<"raw" | "cached">): Promise<void> {
+  async run(_client: Client, interaction: CommandInteraction<"raw" | "cached">): Promise<void> {
     if (!interaction.isChatInputCommand()) return;
     if (!interaction.memberPermissions.has("ManageChannels")) {
       await interaction.reply("you do not have permisison to set which channel fg sparky bot can spawn numberhumans in.");

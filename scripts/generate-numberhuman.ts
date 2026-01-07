@@ -1,3 +1,4 @@
+import type { Rarities } from "@fg-sparky/utils";
 import { Command } from "commander";
 import { copyFile } from "node:fs/promises";
 
@@ -60,7 +61,7 @@ const ability = (args.abilityName && args.abilityDescription
 const numberhumanData: NumberhumanData = {
   uuid: numberUUID,
   name: numberhumanName,
-  rarity: args.rarity,
+  rarity: args.rarity as Rarities,
   hashedName: hasher.digest("hex"),
   image: newFilePath,
   baseHP: Number.parseInt(args.hp, 10),

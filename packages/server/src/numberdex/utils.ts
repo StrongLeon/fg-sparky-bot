@@ -21,7 +21,7 @@ export function createButtonRow(disabled?: boolean): ActionRowBuilder<ButtonBuil
     disabled,
   });
 
-  return new ActionRowBuilder().addComponents(button);
+  return new ActionRowBuilder<ButtonBuilder>().addComponents(button);
 }
 
 export async function spawnNumberhuman(store: NumberhumanStore, channel: SendableChannels): Promise<Result<[NumberhumanInfo, Message], unknown>> {

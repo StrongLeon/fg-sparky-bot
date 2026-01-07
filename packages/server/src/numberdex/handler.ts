@@ -12,6 +12,7 @@ const createGuessModal = (channelId: string): ModalComponentData => ({
     id: 0,
     label: "what's the human's name?",
     type: ComponentType.Label,
+    // @ts-expect-error: labels are not allowed in text input components
     component: {
       customId: `numberhuman-guess-input-${channelId}`,
       style: TextInputStyle.Short,
