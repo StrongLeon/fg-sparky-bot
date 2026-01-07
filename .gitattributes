@@ -1,1 +1,3 @@
-numbers/*.json linguist-generated
+numbers/numbers.json linguist-generated
+numbers/numberhumans.json linguist-generated
+numbers/numberdex-data.json linguist-generated
