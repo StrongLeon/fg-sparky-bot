@@ -1,6 +1,15 @@
 # changelog
 
-## 1.2.1 - January 6th, 2026
+## 1.2.2 - January 9th, 2026
+tuwih caught a bug i didn't catch, thanks for fixing
+
+### fixes:
+- \[[`527d2f23`](https://github.com/skylafalls/fg-sparky-bot/commit/527d2f23ce95b4d07c83fd79e12ec45dec9bda64)] - fix(numberdex): Extra messages and flee ([#24](https://github.com/skylafalls/fg-sparky-bot/pull/24)) by @theuserwhoishere
+
+### chores:
+- \[[`3dcffe54`](https://github.com/skylafalls/fg-sparky-bot/commit/3dcffe5429f263618ef5265b615415e9957b8fee)] - chore(deps): update deps
+
+## 1.2.1 - January 8th, 2026
 oops
 
 ### fixes:
