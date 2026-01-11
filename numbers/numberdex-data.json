@@ -119,6 +119,12 @@
       "description": "{numberhuman} solos any finite number, and can stun numbers between Omega and Absolute Infinity for 3 turns."
     },
     {
+      "numberhumanSpecific": true,
+      "id": "be-square",
+      "name": "Be Square",
+      "description": "Four can only be attacked by numbers with at least one square divisor (excluding 1)."
+    },
+    {
       "id": "double-trouble",
       "name": "Double Trouble",
       "description": "There are two of them. Both have the same HP and ATK."
