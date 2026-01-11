@@ -1,5 +1,16 @@
 # changelog
 
+## 1.2.3 - January 11th, 2026
+some fixes
+
+### fixes:
+- \[[`f8cf1fb8`](https://github.com/skylafalls/fg-sparky-bot/commit/f8cf1fb83310cae2ecdc2547685824e92d554f64)] - fix(entries): fix image path
+- \[[`de63bab3`](https://github.com/skylafalls/fg-sparky-bot/commit/de63bab3d0358ae3469e6134a1d79bb687e21448)] - fix(user/statistics): defer reply to avoid timing out
+- \[[`b6eb5545`](https://github.com/skylafalls/fg-sparky-bot/commit/b6eb554534890a4a47123a3f84cfe9fa192bae22)] - fix(numberdex): handle multiple spawns at the same time
+
+### chores:
+- \[[`d3785201`](https://github.com/skylafalls/fg-sparky-bot/commit/d378520190d2cb91ece3e8b52a39329dcb2dbb55)] - chore(numberdex): Added a couple numberdex messages, fixed a couple numbers ([#25](https://github.com/skylafalls/fg-sparky-bot/pull/25)) by @StrongLeon
+
 ## 1.2.2 - January 9th, 2026
 tuwih caught a bug i didn't catch, thanks for fixing
 

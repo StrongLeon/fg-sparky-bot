@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 import type { Command } from "@fg-sparky/utils";
-import { ApplicationCommandOptionType, PermissionFlagsBits, type Client, type CommandInteraction } from "discord.js";
+import { ApplicationCommandOptionType, MessageFlags, PermissionFlagsBits, type Client, type CommandInteraction } from "discord.js";
 import { Numberhumans, Numbers, Responses } from "../stores.ts";
 
 enum ReloadType {
@@ -25,14 +25,26 @@ const Reload: Command = {
     switch (interaction.options.getString("store", true) as ReloadType) {
       case ReloadType.Numberhumans: {
         await Numberhumans.reload();
+        await interaction.reply({
+          content: "reloaded numberhuman store.",
+          flags: MessageFlags.Ephemeral,
+        });
         break;
       }
       case ReloadType.SparkyEntries: {
         await Numbers.reload();
+        await interaction.reply({
+          content: "reloaded numbers store.",
+          flags: MessageFlags.Ephemeral,
+        });
         break;
       }
       case ReloadType.Reponses: {
         await Responses.reload();
+        await interaction.reply({
+          content: "reloaded responses store.",
+          flags: MessageFlags.Ephemeral,
+        });
         break;
       }
       default: {

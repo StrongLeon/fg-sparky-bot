@@ -158,5 +158,475 @@
     "baseHP": 50,
     "baseATK": 300,
     "ability": "corruption"
+  },
+  {
+    "uuid": "4bb38664-6f90-4a38-a0d0-81ca05782c12",
+    "name": "Too Much Massive Finity",
+    "rarity": "epic",
+    "hashedName": "7952ed3d64e3f4425c75a8718c74e6f44dca8fe66e24d1fbf08e1173fce04c542139b018e01fc382558a2f5f3833ac5cb76a0ab5384d8884932fda68a992bc8a",
+    "image": "numbers/humans/epic/4bb38664-6f90-4a38-a0d0-81ca05782c12.webp",
+    "baseHP": 728,
+    "baseATK": 667,
+    "ability": "jumpscare"
+  },
+  {
+    "uuid": "b4efc58e-c76f-4077-8803-0f2280c1cd7f",
+    "name": "Omni Ordinals",
+    "rarity": "rare",
+    "hashedName": "113b7b1d1dc4c595f18e59d19c59caff7a318ae8f261e3fc59049d4ccaef1d0311ce91710d70903b83a73578e95d129f1b2020a3799af370c40898e6ae09bb72",
+    "image": "numbers/humans/rare/b4efc58e-c76f-4077-8803-0f2280c1cd7f.webp",
+    "baseHP": 320,
+    "baseATK": 450,
+    "ability": "omni-combat"
+  },
+  {
+    "uuid": "503465c8-e1b4-405b-8b69-7aba7287d3d4",
+    "name": "Transcestrial",
+    "rarity": "rare",
+    "hashedName": "99570a49f3a0b699cf0e5d05ace45c6cd35e47aae9a079c63cfe10a981b8e684b19221075407fffc620e6f4ed9c4914b18e690d83107d42d78974265b8576079",
+    "image": "numbers/humans/rare/503465c8-e1b4-405b-8b69-7aba7287d3d4.webp",
+    "baseHP": 275,
+    "baseATK": 300,
+    "ability": null
+  },
+  {
+    "uuid": "cca3ef3a-ba14-47be-8a53-edc8cd55960e",
+    "name": "Pure Zero",
+    "rarity": "rare",
+    "hashedName": "3db62928f5333ae64c2115aa60304cfc2bd811c143f250228a269cdd2f6d26190f46a4978e2e31db404e5966841a05b82f90e32fe862005a2123921a0d17b420",
+    "image": "numbers/humans/rare/cca3ef3a-ba14-47be-8a53-edc8cd55960e.webp",
+    "baseHP": 250,
+    "baseATK": 0,
+    "ability": "dont-hurt-me"
+  },
+  {
+    "uuid": "f1449328-397c-4a77-ab8a-7a20aea47474",
+    "name": "Pi",
+    "rarity": "rare",
+    "hashedName": "d6e1f63f0278cad56cc49fd8bf2ee999351369561a78c6c617ce11ca97a367c2ac8e2ac1ed2fdac6517980ee2b5a975fd5f484d301b7681618321e4d9d47e2e8",
+    "image": "numbers/humans/rare/f1449328-397c-4a77-ab8a-7a20aea47474.webp",
+    "baseHP": 314,
+    "baseATK": 159,
+    "ability": "full-circle"
+  },
+  {
+    "uuid": "75693a4e-6b5e-4c5e-a358-12756befa73f",
+    "name": "Tau",
+    "rarity": "rare",
+    "hashedName": "cd5261f60a9ca04df9566c1056de71b9331378dd1be4d456a583922ae153e2fcd6b6e53b79a38cd8b5ef907cf9910898ff12eb2c405833431dc2c1d8e5b226e3",
+    "image": "numbers/humans/rare/75693a4e-6b5e-4c5e-a358-12756befa73f.webp",
+    "baseHP": 628,
+    "baseATK": 318,
+    "ability": "full-circle-2"
+  },
+  {
+    "uuid": "78aa666a-9d1a-46a5-b7d1-f12d3b611ba5",
+    "name": "The Numerical Nexus",
+    "rarity": "common",
+    "hashedName": "9e31ceb7e07a0f98219220f3fe8adf28fd97705e79aa20712d6db58cc76726cb842743b770c2ed345cd574a338d27855c636be3949b028cce0a1a3ad6656fe4c",
+    "image": "numbers/humans/common/78aa666a-9d1a-46a5-b7d1-f12d3b611ba5.webp",
+    "baseHP": 128,
+    "baseATK": 140,
+    "ability": null
+  },
+  {
+    "uuid": "5639100d-e037-446e-a21b-0e29206fb99a",
+    "name": "The Numerical Edge",
+    "rarity": "rare",
+    "hashedName": "c17ef74308c0e0640b3b9d2bce25560bbae2524f3f73cffd7c33d10b0c82cceb8482a1fa653914184dd0f1051efca70ceebbbe4470198185a62b75d44974fe9f",
+    "image": "numbers/humans/rare/5639100d-e037-446e-a21b-0e29206fb99a.webp",
+    "baseHP": 400,
+    "baseATK": 200,
+    "ability": "knowledge-is-power"
+  },
+  {
+    "uuid": "20bc7f2b-35d7-42c4-9a22-603ea362e191",
+    "name": "Physics Dimensional One",
+    "rarity": "rare",
+    "hashedName": "402bafc7f186082833d2001c8de2c69f21e0da62a3b8a0d68cdf5912b1dfad4d07427a5a6f1302086f0324ea2010fbcfeb7f554aae1d8be8bf8f185397045fd0",
+    "image": "numbers/humans/rare/20bc7f2b-35d7-42c4-9a22-603ea362e191.webp",
+    "baseHP": 300,
+    "baseATK": 300,
+    "ability": null
+  },
+  {
+    "uuid": "28ebc8c6-b0e6-4446-a4e3-f4080f4eda36",
+    "name": "The RAM Number",
+    "rarity": "rare",
+    "hashedName": "97e0698e6fed082e48c04d6766678570f970eb4d9c4b8405e6ef1c3b168c15f4ee47da227484a68b8f09c0a4181dbe00d3300d206dd2cd7328ee71bd64e0a1c9",
+    "image": "numbers/humans/rare/28ebc8c6-b0e6-4446-a4e3-f4080f4eda36.webp",
+    "baseHP": 420,
+    "baseATK": 100,
+    "ability": "tech-support"
+  },
+  {
+    "uuid": "ea4da2ac-dbb7-4f40-901f-332d359c5ce8",
+    "name": "The Suspect",
+    "rarity": "rare",
+    "hashedName": "ed5f3ca63fcc839a653c4ffdfe893b6eadb8f236501c373a5888adea7b94fe941b25edd307e9e79b81dfa855660fb458aba8832ec027685c56979b405c717a80",
+    "image": "numbers/humans/rare/ea4da2ac-dbb7-4f40-901f-332d359c5ce8.webp",
+    "baseHP": 250,
+    "baseATK": 350,
+    "ability": "special-ingredient"
+  },
+  {
+    "uuid": "d70aa16b-94ff-40ac-ad07-1a347492e34e",
+    "name": "The Final Impact",
+    "rarity": "rare",
+    "hashedName": "185ca4f75d81f64a1e9de99d289a2dad1c664f2753be90abbd8caaa2d2320d6c422c4d5612c047131496e8fc5848aeca5eef36f490bc712604031c6dad6ad5f3",
+    "image": "numbers/humans/rare/d70aa16b-94ff-40ac-ad07-1a347492e34e.webp",
+    "baseHP": 200,
+    "baseATK": 300,
+    "ability": "streamer-power"
+  },
+  {
+    "uuid": "a09978be-a342-4622-877e-92407da7ea69",
+    "name": "Absolute Orion",
+    "rarity": "rare",
+    "hashedName": "e7b0c348359884335711e244e9b9edcdf917e1be37e7608ca5e3d56b8b7210ff89dbf5dd0631ea5ff17cd0662175a0eea02d96674924626473b6ae8e9572365e",
+    "image": "numbers/humans/rare/a09978be-a342-4622-877e-92407da7ea69.webp",
+    "baseHP": 250,
+    "baseATK": 250,
+    "ability": "reprogramming"
+  },
+  {
+    "uuid": "397bd77a-6369-4dbc-8216-45e3845245ce",
+    "name": "Absolutely Everything",
+    "rarity": "common",
+    "hashedName": "00e0421f5b49800ee03811458e9f33795cc2f1931062183fb5244fce851e23229391f8ca357a108663c46373be1e5926b9a0fcd534bc043c09f21b028f9206fa",
+    "image": "numbers/humans/common/397bd77a-6369-4dbc-8216-45e3845245ce.webp",
+    "baseHP": 150,
+    "baseATK": 150,
+    "ability": null
+  },
+  {
+    "uuid": "b938ffc9-bd6e-45b3-bea7-f19a3856173c",
+    "name": "Absolute True End",
+    "rarity": "common",
+    "hashedName": "b251f1a2c9ecc8f563676bae027e3ec1f6f30dd8b7005d6fdef7fc0c7ccb626651238ffc7d97e0886068887bd4b5498c46e63fc880a4fdf4c1c2db692dec96bb",
+    "image": "numbers/humans/common/b938ffc9-bd6e-45b3-bea7-f19a3856173c.webp",
+    "baseHP": 100,
+    "baseATK": 100,
+    "ability": null
+  },
+  {
+    "uuid": "5e574ead-e8e3-424a-9425-354e64fbdd99",
+    "name": "Infinity",
+    "rarity": "common",
+    "hashedName": "ed4aeb62745db7da54f8d3907ac045a07d0e1b1ace88f2a671bb4b8b296a945f748b3bd88fde17df3b4b61d6b72658bb5288b225cbc4f10db17009eececfb591",
+    "image": "numbers/humans/common/5e574ead-e8e3-424a-9425-354e64fbdd99.webp",
+    "baseHP": 225,
+    "baseATK": 225,
+    "ability": null
+  },
+  {
+    "uuid": "dcbde154-2963-4a7b-9d0a-68bda92aa54b",
+    "name": "Eternity",
+    "rarity": "epic",
+    "hashedName": "18fe1f552e031a98955a358fa13918d55e4f59b2579050b5b0d5dbf1af0328b87fca949f06650c9dec0d45b2192e71b03f9e8e5b62faff74310b2bdf150d55cc",
+    "image": "numbers/humans/epic/dcbde154-2963-4a7b-9d0a-68bda92aa54b.webp",
+    "baseHP": 767,
+    "baseATK": 783,
+    "ability": "forgetting"
+  },
+  {
+    "uuid": "d42c90dd-334d-4f67-81b4-850d3c1530ed",
+    "name": "The Metempiric Number",
+    "rarity": "common",
+    "hashedName": "7ac2c4534d323587328bf857766e5415970f3a202fc49291768761823fe15b2c3498b12fd3d3327a586c16516d7ba6b5f773a3092e0ff182d0f2a48cfb9da34b",
+    "image": "numbers/humans/common/d42c90dd-334d-4f67-81b4-850d3c1530ed.webp",
+    "baseHP": 67,
+    "baseATK": 41,
+    "ability": "dumb-stupid"
+  },
+  {
+    "uuid": "467d0f33-4e31-44fa-a468-cac919f5c7c6",
+    "name": "The Breaking Liminality",
+    "rarity": "common",
+    "hashedName": "e823dfefa846e2d73fd5c7ff0e3eec497ca8f28a272fe931708184e75e5fc584aebf22c9e77ec3469503ee07caf0b4c3c2497ff6ef90da171c47900ba600ae5e",
+    "image": "numbers/humans/common/467d0f33-4e31-44fa-a468-cac919f5c7c6.webp",
+    "baseHP": 115,
+    "baseATK": 115,
+    "ability": null
+  },
+  {
+    "uuid": "06322d9e-734b-484c-8b36-f24b898fbf19",
+    "name": "The Alpha-Layer",
+    "rarity": "common",
+    "hashedName": "4d0469b170a02d5621196156979ced88ba7d4c55eb64d87a10a355e4eb337c28bbaecfe31cbc568db2561a22f1da70ea1f3fee1c66a282b8028a864bdb92c330",
+    "image": "numbers/humans/common/06322d9e-734b-484c-8b36-f24b898fbf19.webp",
+    "baseHP": 100,
+    "baseATK": 100,
+    "ability": null
+  },
+  {
+    "uuid": "013d783c-6b7c-4145-a3b6-724a7b340642",
+    "name": "Absolute Infinity",
+    "rarity": "epic",
+    "hashedName": "3cd3b9b51a29c4e8a76cca8f11cb14ab8087ca13261c76a02d7732c9897a6e2020c358fb742bcfaff00e6bb2be763eb49472be6640eebfeb06064afa047e1877",
+    "image": "numbers/humans/epic/013d783c-6b7c-4145-a3b6-724a7b340642.webp",
+    "baseHP": 800,
+    "baseATK": 933,
+    "ability": "power-of-god"
+  },
+  {
+    "uuid": "3cd21f80-ef9b-4784-8740-3bae84200b84",
+    "name": "Four",
+    "rarity": "common",
+    "hashedName": "c500d7ce3369dfd284c6af2e1d45b6703813e83c4da0bb37886575569755efbfb70f64a5ee1e91f9c2f28c38bcb5d58f396573ad5a962c65dc5e760b5a961efb",
+    "image": "numbers/humans/common/3cd21f80-ef9b-4784-8740-3bae84200b84.webp",
+    "baseHP": 144,
+    "baseATK": 144,
+    "ability": "be-square"
+  },
+  {
+    "uuid": "af30540f-a47a-484a-8952-3cab15a65e27",
+    "name": "Three",
+    "rarity": "common",
+    "hashedName": "7899fc2d0f89d1ac22efb7e51f50f1ad58d837258c6ca119a920ff6563ba40409ff0ae43ee2bb3eca8889278b89d7fbabdfccb9bd1ba45a3474bde6df36c5e0c",
+    "image": "numbers/humans/common/af30540f-a47a-484a-8952-3cab15a65e27.webp",
+    "baseHP": 133,
+    "baseATK": 133,
+    "ability": null
+  },
+  {
+    "uuid": "8c7c9abe-f2bc-4f3d-9453-d8a0519444b3",
+    "name": "Two",
+    "rarity": "common",
+    "hashedName": "9de15d13fdf65a3e7e4319104aeaa507008f8d3c10cda62d893f2ed86d4f0fe72bafef51d81e87f5df422972fbd22fea9fda60eee0e8117911394311050db5c4",
+    "image": "numbers/humans/common/8c7c9abe-f2bc-4f3d-9453-d8a0519444b3.webp",
+    "baseHP": 122,
+    "baseATK": 122,
+    "ability": "double-trouble"
+  },
+  {
+    "uuid": "eeb9244d-19c0-4356-b99a-86572ce2af6a",
+    "name": "One",
+    "rarity": "common",
+    "hashedName": "b5c79b33ed05bf043e141bcc2a1c9b793c07a60ab737e0b9f5b8dbbb7495a5b328c18ceab86f8b260c45692d4cf54392ec8957d28cb6456ea46fbee073376b66",
+    "image": "numbers/humans/common/eeb9244d-19c0-4356-b99a-86572ce2af6a.webp",
+    "baseHP": 111,
+    "baseATK": 111,
+    "ability": null
+  },
+  {
+    "uuid": "7c886ffb-85ce-4520-a5ac-b37efca3d284",
+    "name": "Zero",
+    "rarity": "common",
+    "hashedName": "d473de5df38f9c70563b3bca6242c1dd94f4d47081d0356fd6c929465865e2b37dfc2bc4a9da9dcf3760a4f1d7632d78460cf5898901dfead43d0ae748d00bb0",
+    "image": "numbers/humans/common/7c886ffb-85ce-4520-a5ac-b37efca3d284.webp",
+    "baseHP": 100,
+    "baseATK": 0,
+    "ability": "nullify"
+  },
+  {
+    "uuid": "789ef21b-f624-44fd-9f4a-2a5603f19434",
+    "name": "Graham's Number",
+    "rarity": "rare",
+    "hashedName": "328c7aaec4d641bfd62ee181fd4261c3e1fd9c9e6ffca17742426254031264dbf81136f1a78d7a6229c0a73dd1597ab9b78f0e6332dc0a85ab99e4cab414089a",
+    "image": "numbers/humans/rare/789ef21b-f624-44fd-9f4a-2a5603f19434.webp",
+    "baseHP": 364,
+    "baseATK": 364,
+    "ability": "up-arrow"
+  },
+  {
+    "uuid": "f29e282d-7341-4fb1-ac34-7760ac0dadfe",
+    "name": "Busy Beaver Number",
+    "rarity": "rare",
+    "hashedName": "d9f9cd66294836cfcbd25395b1882a74075d9910abadd2e2d1e2931e297a458f0b8ab63b95e832789dc97b323caba8af75c963a3dfd3830d84dc3d5b7086ced6",
+    "image": "numbers/humans/rare/f29e282d-7341-4fb1-ac34-7760ac0dadfe.webp",
+    "baseHP": 256,
+    "baseATK": 256,
+    "ability": null
+  },
+  {
+    "uuid": "be27f7c6-49ad-4adf-94c5-6a5dbb179e19",
+    "name": "Googolplex",
+    "rarity": "epic",
+    "hashedName": "bf40f85f4ca6eea0891fe2af621a245b281af21a1e901ad4c5eaa2147cf5a03a152169bafdb54dcf8a200e7f00cfbcc53cc306147e2e07c9f1feef979bcab272",
+    "image": "numbers/humans/epic/be27f7c6-49ad-4adf-94c5-6a5dbb179e19.webp",
+    "baseHP": 767,
+    "baseATK": 750,
+    "ability": null
+  },
+  {
+    "uuid": "7ca23787-f573-4ca7-ad0d-b5035398dcb8",
+    "name": "Rayo's Number",
+    "rarity": "epic",
+    "hashedName": "f47d505edd0ae9be8bc00ea392c245ae0cb1fa672e3ac5249ae42cba04346868b10341bbacd50ebae44dbc7a62d3e283dfd653b8764b47c706af005990445318",
+    "image": "numbers/humans/epic/7ca23787-f573-4ca7-ad0d-b5035398dcb8.webp",
+    "baseHP": 800,
+    "baseATK": 733,
+    "ability": null
+  },
+  {
+    "uuid": "8cbf69f7-38e3-404c-becd-18ea772b4d75",
+    "name": "Twelve",
+    "rarity": "common",
+    "hashedName": "43bd52a1d01de850c8757106f972d660fed826092da9fb7d34d6191a256fe2a1aa49f2c3786fc307e49241ce80cce176923f90d8fa1d8be157821904705c6a6d",
+    "image": "numbers/humans/common/8cbf69f7-38e3-404c-becd-18ea772b4d75.webp",
+    "baseHP": 100,
+    "baseATK": 100,
+    "ability": null
+  },
+  {
+    "uuid": "5f42ed1e-6799-4508-accf-60f02066c810",
+    "name": "Eleven",
+    "rarity": "epic",
+    "hashedName": "75a13499f824ea7e2b707b474bcd820c3c06b1abb99fc7c3496026bd2dfd16cd46e8d7c0337c575f98b1d0cb07f3a31a6d63a480b5d29c95c3bf26aa95aeafa7",
+    "image": "numbers/humans/epic/5f42ed1e-6799-4508-accf-60f02066c810.webp",
+    "baseHP": 737,
+    "baseATK": 737,
+    "ability": null
+  },
+  {
+    "uuid": "ca67569d-8950-4694-a97f-f1f26319c791",
+    "name": "Aleph Null",
+    "rarity": "epic",
+    "hashedName": "95ec0a6b1287778641ba3d3324cb89628b0daa7c145fcbe9cf93089e098649b1735e5c5937790cb9885232a57c84c5ea60c71adcb52f19aca2a11933eae3dff2",
+    "image": "numbers/humans/epic/ca67569d-8950-4694-a97f-f1f26319c791.webp",
+    "baseHP": 833,
+    "baseATK": 833,
+    "ability": "set-of-all-numbers"
+  },
+  {
+    "uuid": "241308a2-6451-4cc3-bc0b-9d87f06df43a",
+    "name": "Seven",
+    "rarity": "common",
+    "hashedName": "fa6c6455a3f64a924fa9b87a288db204aec82c5688932969081b3f6f2245697a51bdf0de92907b02c2eec2d42d168ccb9d4f7ffe17a12ec4c20167af17663855",
+    "image": "numbers/humans/common/241308a2-6451-4cc3-bc0b-9d87f06df43a.webp",
+    "baseHP": 140,
+    "baseATK": 77,
+    "ability": "lucky-charm"
+  },
+  {
+    "uuid": "8cdfbc4b-7534-4d7e-bd32-4fb506d18bbc",
+    "name": "256",
+    "rarity": "rare",
+    "hashedName": "62be08fcf17d98d8e11aa1ebe0b3440994ac774f6fd759ca40c85c9c15e2bcc9e4c67de12128fa488aa5d91d4cb535a6fb131e38b95f53c770913de9b85622d6",
+    "image": "numbers/humans/rare/8cdfbc4b-7534-4d7e-bd32-4fb506d18bbc.webp",
+    "baseHP": 256,
+    "baseATK": 256,
+    "ability": null
+  },
+  {
+    "uuid": "cd2ad0c7-3413-4343-8dcc-ea5373102e00",
+    "name": "Medronifinity",
+    "rarity": "common",
+    "hashedName": "154f40ce1abb1a72ed7190d4c6a51198da48d9e97c472aa9fa0e67bf45d561493d6b62432bb291fa6a7dee8460c85cccc367252f18a94ae0df96ed2f2f4f9c01",
+    "image": "numbers/humans/common/cd2ad0c7-3413-4343-8dcc-ea5373102e00.webp",
+    "baseHP": 100,
+    "baseATK": 100,
+    "ability": "collision-course"
+  },
+  {
+    "uuid": "7ddadd49-bb95-4216-8ece-083e1aa15ba7",
+    "name": "Imaginary Unit",
+    "rarity": "rare",
+    "hashedName": "1d6fee389db6d480d4523dcfd78401979d7f1c11b07f1c69797670f2d17b2ad4e64b2c3f3c8c57284e6dd617a64dc86d9d7ff19da42582f8027ec0c2bc9c5e73",
+    "image": "numbers/humans/rare/7ddadd49-bb95-4216-8ece-083e1aa15ba7.webp",
+    "baseHP": 350,
+    "baseATK": 250,
+    "ability": "imagination"
+  },
+  {
+    "uuid": "a0ad46f6-5e41-4ed9-b6b1-fb2a4766975b",
+    "name": "Large Number Garden Number",
+    "rarity": "epic",
+    "hashedName": "271bbd731f7e2156bfaf90bd038ac260934a9725bf43cf85d6b3bb478b7f5d7ffed54b12a2f7229d01b9766038680e72653815fe319d9dd961ac63da9473f8b0",
+    "image": "numbers/humans/epic/a0ad46f6-5e41-4ed9-b6b1-fb2a4766975b.webp",
+    "baseHP": 900,
+    "baseATK": 900,
+    "ability": "floral-fury"
+  },
+  {
+    "uuid": "ece44b47-a06c-4ced-b006-5fa914d56bfb",
+    "name": "Iteral",
+    "rarity": "common",
+    "hashedName": "ab4e16aee5070dd7a5b32f266d9d5782a52530e740efedc567466b826ff54962f0cd6ad324d44f1423353e1110cc91d296c7b883e9eeba11331f1c2c65904bcd",
+    "image": "numbers/humans/common/ece44b47-a06c-4ced-b006-5fa914d56bfb.webp",
+    "baseHP": 150,
+    "baseATK": 150,
+    "ability": "iterum"
+  },
+  {
+    "uuid": "146dcbb4-640f-4046-a4a7-9138ffe2aabf",
+    "name": "Five",
+    "rarity": "rare",
+    "hashedName": "f203421efccd8b560f1bb1a4d7b1c8a9019523d0687110669ee60cf40a2bab89bd30d4e40dbc1c7f8dcb23909456681833f0ffd3a191b2ec66408df2bac84e88",
+    "image": "numbers/humans/rare/146dcbb4-640f-4046-a4a7-9138ffe2aabf.webp",
+    "baseHP": 625,
+    "baseATK": 125,
+    "ability": "high-five"
+  },
+  {
+    "uuid": "4aafb653-35ae-41b1-bcf1-51ff382e4462",
+    "name": "Six",
+    "rarity": "epic",
+    "hashedName": "e22cc19790282d6078a8a51b86baed970ceb28d7c3d196efee6e42cc671e0f2549fd788dec78bdc8174b0e4e2ae6c8b61dc9fc1a884e2355de55daa3ffa5513e",
+    "image": "numbers/humans/epic/4aafb653-35ae-41b1-bcf1-51ff382e4462.webp",
+    "baseHP": 722,
+    "baseATK": 722,
+    "ability": "six-feet-under"
+  },
+  {
+    "uuid": "54a01d9f-6aa2-4766-aed5-748eef56a309",
+    "name": "Eight",
+    "rarity": "epic",
+    "hashedName": "50a7e16ee8d78a53c5fdb60fc8fdb947825503990419dc2ec51a800f2de37f53b46c0f00d3e72ab3db882c440f8df639486a55206a7c6152435a9297d8f10398",
+    "image": "numbers/humans/epic/54a01d9f-6aa2-4766-aed5-748eef56a309.webp",
+    "baseHP": 796,
+    "baseATK": 796,
+    "ability": "magic-ball"
+  },
+  {
+    "uuid": "f714945e-e062-49b0-afd1-db3ca6a1a82f",
+    "name": "Nine",
+    "rarity": "rare",
+    "hashedName": "54a9d1250091bb29681cdd1e4ecf58575b9f333959e160347bfea1e03af46b6b6613a7613a364b1658aa9c34f909a0ed88c633d5790a2397968dfcbea980e648",
+    "image": "numbers/humans/rare/f714945e-e062-49b0-afd1-db3ca6a1a82f.webp",
+    "baseHP": 20,
+    "baseATK": 100,
+    "ability": "nine-lives"
+  },
+  {
+    "uuid": "ddc7cfd4-f145-4ca7-a696-e29b6dd593cd",
+    "name": "Goobol",
+    "rarity": "common",
+    "hashedName": "40c0762bfdf2fff6d89215d99f00c6fc859a7b17720cbdded1a23d28ab0cf3b721a19190780f458883abdeedf25453e3745279e8baf5db653738ac393c89c6da",
+    "image": "numbers/humans/common/ddc7cfd4-f145-4ca7-a696-e29b6dd593cd.webp",
+    "baseHP": 170,
+    "baseATK": 170,
+    "ability": null
+  },
+  {
+    "uuid": "81e64c87-ee1b-4f0a-a692-bfd60ba0200e",
+    "name": "Dekulus",
+    "rarity": "common",
+    "hashedName": "3075ec9ee741eabf3393b103d8231d33f1662a324f7ca24617b80c233ffb64589bf758fdcb8f4ed3155767725cd8c8bb89f9eb45bda515b87fca98cb97d9d057",
+    "image": "numbers/humans/common/81e64c87-ee1b-4f0a-a692-bfd60ba0200e.webp",
+    "baseHP": 200,
+    "baseATK": 200,
+    "ability": "dekatria"
+  },
+  {
+    "uuid": "a99eeb34-db50-482e-a821-f059acd81fac",
+    "name": "Strong Array Notation Limit",
+    "rarity": "common",
+    "hashedName": "2c87455362f6ace614e3a597aaafc9e6b70aa732fbfd0d76be7d6409e0f95b75e6168007a042e7f7298eff7553b73c10692f3ff197d2ca033bf3093abd267997",
+    "image": "numbers/humans/common/a99eeb34-db50-482e-a821-f059acd81fac.webp",
+    "baseHP": 220,
+    "baseATK": 220,
+    "ability": null
+  },
+  {
+    "uuid": "81f896d4-047f-4072-8dab-d7be6ffc3bac",
+    "name": "Legendre's Constant",
+    "rarity": "common",
+    "hashedName": "571340b1ff5f75f4e5cba09d1fc78440bd8450f00eda2922f7044773a7f71109feb4cba618b76a8d975c94794a9bbc9c83f91d304f9b8cc1e1c1bcfda90d77c3",
+    "image": "numbers/humans/common/81f896d4-047f-4072-8dab-d7be6ffc3bac.webp",
+    "baseHP": 108,
+    "baseATK": 365,
+    "ability": "disguise"
   }
 ]
