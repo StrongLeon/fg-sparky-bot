@@ -1,17 +1,21 @@
-export enum EvolutionType {
-  None = 0,
-  Superscaled = 1,
-  Mastered = 2,
-  Endfimidian = 3,
-  Celestial = 4,
-  Eternal = 5,
-  Corrotechnic = 6,
-  Subeuclidean = 7,
-  Zyrolexic = 8,
-  Transcendent = 9,
-  Corrupt = 10,
-  Absolute = 11,
-}
+/**
+ * @enum
+ */
+export const EvolutionType = {
+  None: 0,
+  Superscaled: 1,
+  Mastered: 2,
+  Endfimidian: 3,
+  Celestial: 4,
+  Eternal: 5,
+  Corrotechnic: 6,
+  Subeuclidean: 7,
+  Zyrolexic: 8,
+  Transcendent: 9,
+  Corrupt: 10,
+  Absolute: 11,
+} as const;
+export type EvolutionType = (typeof EvolutionType)[keyof typeof EvolutionType];
 
 export const EvolutionMap: Record<EvolutionType, [number, number]> = {
   [EvolutionType.None]: [1, 1],
