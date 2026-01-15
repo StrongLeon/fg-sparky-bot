@@ -70,7 +70,7 @@ const Gift: Command = {
     ].join("\n");
 
     Logger.info(
-      `user ${interaction.user.displayName} wants to gift ${amount} tokens to ${user.id}`
+      `user ${interaction.user.displayName} wants to gift ${amount} tokens to ${user.displayName}`
     );
     await interaction.reply({
       content,
@@ -85,7 +85,7 @@ const Gift: Command = {
       ) {
         clearTimeout(timeout);
         if (interact.customId === "gift-accept-button") {
-          Logger.info(`user ${user.id} accepted the gift`);
+          Logger.info(`user ${user.displayName} accepted the gift`);
           userInDB.tokens += Math.floor(amount * 0.95);
           giftingUser.tokens -= amount;
           await userInDB.save();
@@ -99,7 +99,7 @@ const Gift: Command = {
             )} has accepted your gift. I wish you two a happy life together.`
           );
         } else {
-          Logger.info(`user ${user.id} declined the gift`);
+          Logger.info(`user ${user.displayName} declined the gift`);
           await interaction.editReply({
             components: [createButtonRow(false)],
           });
@@ -113,7 +113,7 @@ const Gift: Command = {
 
     const timeout = setTimeout(async () => {
       client.off("interactionCreate", handler);
-      Logger.info(`user ${user.id} took too long to accept`);
+      Logger.info(`user ${user.displayName} took too long to accept`);
       await interaction.editReply({
         components: [createButtonRow(false)],
       });
