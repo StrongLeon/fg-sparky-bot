@@ -16,6 +16,7 @@ export * from "./constants.ts";
 /* Cooldowns */
 export * from "./cooldowns/guesses.ts";
 export * from "./cooldowns/normal.ts";
+export * from "./evolutions.ts";
 export * from "./formatter.ts";
 export * from "./logger.ts";
 export * from "./numbers.ts";

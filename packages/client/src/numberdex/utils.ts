@@ -13,6 +13,7 @@ import {
   type NumberhumanStore,
 } from "@fg-sparky/server";
 import {
+  EvolutionType,
   formatPercent,
   getRandomRange,
   joinStringArray,
@@ -167,6 +168,28 @@ interface NumberhumanCreationOptions {
   bonusATK: number;
 }
 
+const EvolutionRarity: [EvolutionType, number][] = [
+  [EvolutionType.None, 1],
+  [EvolutionType.Superscaled, 8],
+  [EvolutionType.Mastered, 16],
+  [EvolutionType.Endfimidian, 25],
+  [EvolutionType.Celestial, 48],
+  [EvolutionType.Eternal, 90],
+  [EvolutionType.Corrotechnic, 125],
+  [EvolutionType.Subeuclidean, 175],
+  [EvolutionType.Zyrolexic, 200],
+  [EvolutionType.Transcendent, 300],
+  [EvolutionType.Corrupt, 400],
+  [EvolutionType.Absolute, 500],
+];
+
+function randomEvolution(): EvolutionType {
+  for (const [evol, rarity] of EvolutionRarity) {
+    if (getRandomRange(1, rarity) === rarity) return evol;
+  }
+  return EvolutionType.None;
+}
+
 async function createNumberhuman(
   options: NumberhumanCreationOptions
 ): Promise<NumberhumanData> {
@@ -174,5 +197,6 @@ async function createNumberhuman(
   newHuman.bonusAtk = options.bonusATK;
   newHuman.bonusHP = options.bonusHP;
   newHuman.id = options.base.uuid;
+  newHuman.evolution = randomEvolution();
   return await newHuman.save();
 }
