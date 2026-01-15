@@ -27,7 +27,6 @@
     "@fg-sparky/client": "workspace:*",
     "@fg-sparky/server": "workspace:*",
     "@fg-sparky/utils": "workspace:*",
-    "commander": "catalog:utils",
-    "typescript-eslint": "catalog:linting"
+    "commander": "catalog:utils"
   }
 }
