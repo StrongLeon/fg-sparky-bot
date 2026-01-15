@@ -11,6 +11,7 @@
     "build": "bun run scripts/bundle.ts",
     "lint": "oxlint . --type-check --type-aware --ignore-path=.gitignore",
     "lint:fix": "oxlint --type-check --type-aware --fix --fix-suggestions . --ignore-path=.gitignore",
+    "fmt": "biome format --write .",
     "typecheck": "tsgo -p tsconfig.json"
   },
   "devDependencies": {
