@@ -8,7 +8,7 @@
     "lineWidth": 100
   },
   "files": {
-    "includes": ["src/**/*.ts", "!node_modules/", "!!**/dist", "!!**/build"]
+    "includes": ["packages/**/*.ts", "scripts/*.ts", "*.md", "*.json"]
   },
   "vcs": {
     "clientKind": "git",
