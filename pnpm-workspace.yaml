@@ -4,7 +4,7 @@ packages:
 catalogs:
   build:
     comptime.ts: ^0.8.0
-    rolldown: 1.0.0-beta.59
+    rolldown: 1.0.0-beta.60
     vite: ^8.0.0-beta.2
   db:
     better-sqlite3: ^12.5.0
@@ -16,13 +16,13 @@ catalogs:
     discord.js: 14.25.1
   linting:
     dprint: ^0.51.1
-    oxlint: ^1.38.0
-    oxlint-tsgolint: ^0.10.1
+    oxlint: ^1.39.0
+    oxlint-tsgolint: ^0.11.0
   types:
     '@types/better-sqlite3': ^7.6.13
-    '@types/bun': ^1.3.5
-    '@types/node': ^25.0.3
-    '@typescript/native-preview': 7.0.0-dev.20260108.1
+    '@types/bun': ^1.3.6
+    '@types/node': ^25.0.8
+    '@typescript/native-preview': 7.0.0-dev.20260115.1
     zod: ^4.3.0
   utils:
     '@sapphire/result': ^2.8.0
