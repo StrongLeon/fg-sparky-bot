@@ -16,7 +16,7 @@ export async function updateUserStats(
   number: NumberhumanInfo,
   guessed: string,
 ): Promise<void> {
-  const numberhuman = await createNumberhuman({
+  const numberhuman = createNumberhuman({
     base: number,
     bonusATK: getRandomRange(0.95, 1.15),
     bonusHP: getRandomRange(0.95, 1.15),
@@ -141,13 +141,13 @@ function randomEvolution(): EvolutionType {
   return EvolutionType.None;
 }
 
-async function createNumberhuman(
+function createNumberhuman(
   options: NumberhumanCreationOptions,
-): Promise<NumberhumanData> {
+): NumberhumanData {
   const newHuman = new NumberhumanData();
   newHuman.bonusAtk = options.bonusATK;
   newHuman.bonusHP = options.bonusHP;
   newHuman.id = options.base.uuid;
   newHuman.evolution = randomEvolution();
-  return await newHuman.save();
+  return newHuman;
 }
