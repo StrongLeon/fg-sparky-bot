@@ -8,7 +8,9 @@
   "version": "1.3.0-beta.1",
   "scripts": {
     "dev": "bun run --watch dist/main.js",
-    "build": "pnpm run --filter @fg-sparky/client build",
+    "start": "bun run dist/main.js",
+    "restart": "pnpm run build && pnpm run start",
+    "build": "pnpm run typecheck && pnpm run lint && pnpm run --filter @fg-sparky/client build",
     "lint": "oxlint . --type-check --type-aware --ignore-path=.gitignore",
     "lint:fix": "oxlint --type-check --type-aware --fix --fix-suggestions . --ignore-path=.gitignore",
     "fmt": "dprint fmt",

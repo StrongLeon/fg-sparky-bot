@@ -35,8 +35,8 @@ export class StreakCollection extends Collection<string, number> {
 
         user.bestStreak = Math.max(user.bestStreak, streak);
         return user.save();
-        // oxlint-disable-next-line always-return
       }),
+      // oxlint-disable-next-line promise/always-return
     ).then(() => {
       super.clear();
     });

@@ -4,7 +4,7 @@ import { defineConfig, type RolldownOptions } from "rolldown";
 const config: RolldownOptions = defineConfig({
   input: "src/main.ts",
   output: {
-    dir: "dist",
+    dir: "../../dist",
     cleanDir: true,
     banner: `/**
  * @license
