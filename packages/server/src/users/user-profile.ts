@@ -4,7 +4,7 @@
  * Copyright (C) 2025 Skylafalls
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import { BaseEntity, Column, Entity, JoinTable, ManyToMany, PrimaryColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
 import { NumberhumanData } from "./numberhuman.ts";
 
 /**
@@ -63,8 +63,7 @@ export class UserProfile extends BaseEntity {
   /**
    * Array of numberhumans the player has caught.
    */
-  @ManyToMany(() => NumberhumanData)
-  @JoinTable()
+  @OneToMany(() => NumberhumanData, (numberhuman: NumberhumanData) => numberhuman.caughtBy)
   // @ts-expect-error: trying to add an initializer will make relations not work properly
   numberhumans: NumberhumanData[];
 }
