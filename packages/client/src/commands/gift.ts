@@ -168,15 +168,15 @@ const Gift: Command = {
   name: "gift",
   options: [
     {
-      name: "amount",
-      description: "How much to send the person",
-      type: ApplicationCommandOptionType.Number,
-      required: true,
-    },
-    {
       name: "user",
       description: "The person to send the gift to",
       type: ApplicationCommandOptionType.User,
+      required: true,
+    },
+    {
+      name: "amount",
+      description: "How much to send the person",
+      type: ApplicationCommandOptionType.Number,
       required: true,
     },
   ],
