@@ -12,6 +12,8 @@ export default async function userShow(
   _: Client,
   interaction: ServerSlashCommandInteraction,
 ): Promise<void> {
+  await interaction.deferReply();
+
   const discordUser = interaction.options.getUser("user", true);
   const userInfo = await getUser(discordUser.id, interaction.guildId);
   if (userInfo) {
@@ -71,10 +73,10 @@ export default async function userShow(
       `- ${numberhumans.filter(value => value.evolution !== EvolutionType.None).length} had an evolution.`,
       `View more numberhuman information by running ${slashCommandMention}.`,
     ]);
-    await interaction.reply({
+    await interaction.followUp({
       content,
     });
   } else {
-    await interaction.reply("sorry, fg sparky bot doesn't have data for this user");
+    await interaction.followUp("sorry, fg sparky bot doesn't have data for this user");
   }
 }
