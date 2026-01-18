@@ -1,4 +1,4 @@
-import { type NumberhumanData, UserProfile } from "@fg-sparky/server";
+import { NumberhumanData, UserProfile } from "@fg-sparky/server";
 import { formatAdd, getEvolutionBuff, type ServerSlashCommandInteraction } from "@fg-sparky/utils";
 import type { Client, User } from "discord.js";
 import { Numberhumans } from "../../stores.ts";
@@ -41,13 +41,21 @@ export default async function numberdexShowHumans(
       id: user.id,
       guildId: interaction.guildId,
     },
+  });
+  const realNumbers = await NumberhumanData.find({
     relations: {
-      numberhumans: true,
+      caughtBy: true,
+    },
+    where: {
+      caughtBy: {
+        guildId: interaction.guildId,
+        id: user.id,
+      },
     },
   });
   if (dbUser === null) return;
 
   await interaction.reply({
-    content: createCollectionMessage(user, pageNumber, dbUser.numberhumans!),
+    content: createCollectionMessage(user, pageNumber, realNumbers),
   });
 }
