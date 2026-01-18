@@ -25,7 +25,7 @@ const Gift: Command = {
     interaction: CommandInteraction<"raw" | "cached">,
   ): Promise<void> {
     if (!interaction.isChatInputCommand()) return;
-    const amount = interaction.options.getNumber("amount", true);
+    const amount = interaction.options.getInteger("amount", true);
     const user = interaction.options.getUser("user", true);
     const userInDB = await getUser(user.id, interaction.guildId);
     const giftingUser = await getUser(interaction.user.id, interaction.guildId);
@@ -176,7 +176,7 @@ const Gift: Command = {
     {
       name: "amount",
       description: "How much to send the person",
-      type: ApplicationCommandOptionType.Number,
+      type: ApplicationCommandOptionType.Integer,
       required: true,
     },
   ],
